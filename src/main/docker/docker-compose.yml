@@ -1,0 +1,40 @@
+version: '2.1'
+services:
+    redis-server:
+        container_name: redis-server
+        image: healthcheck/redis
+        networks:
+            - spring-cloud-network
+        ports:
+            - 6379:6379
+        logging:
+            driver: json-file
+    config-server:
+        container_name: config-server
+        image: @dockerTagBase@/configuration-service:@configServerVersion@
+        healthcheck:
+          test: ["CMD", "curl", "-f", "http://localhost:8888/health"]
+          interval: 30s
+          timeout: 5s
+          retries: 3
+        environment:
+          CONFIG_SERVICE_REPO: "file://tmp"
+        expose:
+            - 8888
+        ports:
+            - 8888:8888
+        networks:
+            - spring-cloud-network
+        volumes:
+            - @USER_HOME@/smarter_app/iat-config-repo:/tmp
+        logging:
+            driver: json-file
+        links:
+            - redis-server
+        depends_on:
+          redis-server:
+            condition: service_healthy
+networks:
+    spring-cloud-network:
+        driver: bridge
+
