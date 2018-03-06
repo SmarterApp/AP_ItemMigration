@@ -61,13 +61,14 @@ migration:
           migrationDescription: "Migration: set all items to Draft workflow status"
         -
           migrationName: "migrationEmpty"
-          migrationDescription: "Increment item version"
+          migrationDescription: "Migration: increment item version to iat-4"
     -
       migrationSetKey: "iat-5"
       migrationDefinitions:
         -
           migrationName: "migrationEmpty"
-          migrationDescription: "Increment item version"
+          migrationDescription: "Migration: increment item version to iat-5"
+
 
 
 
