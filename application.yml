@@ -35,6 +35,8 @@ itembank:
   localBaseDir: "${HOME}/ItemBank"
   apiVersion: "/api/v4"
   bankKey: "187"
+  systemVersion: "iat-5"
+  reportRepoName: "ItemBankReports"
 
 logging:
   level:
@@ -42,20 +44,31 @@ logging:
       opentestsystem:
         ap:
           migration: "debug"
-          common: "debug"
+          common: "info"
 
-migrator:
-  includedItems:
-    - 305
-  migrations:
+migration:
+  systemUsername: "item-migration@smarterbalanced.org"
+  systemFullname: "Item Migration"
+#  includedItems:
+#    - 200004
+  migrationsEnabled: true
+  migrationSets:
     -
-      migrationName: "Migration_1"
-      migrationDescription: "Migration: one"
+      migrationSetKey: "iat-4"
+      migrationDefinitions:
+        -
+          migrationName: "migration1611"
+          migrationDescription: "Migration: set all items to Draft workflow status"
+        -
+          migrationName: "migrationEmpty"
+          migrationDescription: "Increment item version"
     -
-      migrationName: "Migration_2"
-      migrationDescription: "Migration: two"
-    -
-      migrationName: "Migration_1424"
-      migrationDescription: "Migration: added 'version' property to item model"
+      migrationSetKey: "iat-5"
+      migrationDefinitions:
+        -
+          migrationName: "migrationEmpty"
+          migrationDescription: "Increment item version"
+
+
 
 

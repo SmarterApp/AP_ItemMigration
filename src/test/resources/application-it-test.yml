@@ -31,6 +31,9 @@ tasks:
   itemCleanupThresholdMillis : "30000"
   itemCleanupRunEveryMillis: "30000"
 
+migration:
+  publishReportEnabled: false
+  migrationsEnabled: false
 
 ---
 spring:
