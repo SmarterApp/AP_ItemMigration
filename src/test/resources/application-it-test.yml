@@ -1,0 +1,52 @@
+# --------------------------------------------------------
+# Properties for integration tests.  Tests are run with an
+# active profile of 'it-test'
+# --------------------------------------------------------
+security:
+  basic:
+    enabled: "false"
+
+spring:
+  session:
+    enabled: "false"
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+cache:
+  expirationSeconds: 30
+
+itembank:
+  test:
+    enabled: "true"
+
+data:
+  loader:
+    enabled: "true"
+
+flyway:
+  enabled: false
+
+tasks:
+  itemCleanupThresholdMillis : "30000"
+  itemCleanupRunEveryMillis: "30000"
+
+migration:
+  publishReportEnabled: false
+  migrationsEnabled: false
+
+---
+spring:
+  profiles: "security-on"
+
+security:
+  basic:
+    enabled: "true"
+
+---
+spring:
+  profiles: "itembank-on"
+
+itembank:
+  test:
+    enabled: "false"
