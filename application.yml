@@ -51,7 +51,12 @@ migration:
   systemFullname: "Item Migration"
 #  includedItems:
 #    - 200004
-  migrationsEnabled: true
+  deleteItemsEnabled: true
+  doNotDeleteItems:
+    - 200000
+    - 7221
+    - 7220
+  migrationsEnabled: false
   migrationSets:
     -
       migrationSetKey: "iat-4"
