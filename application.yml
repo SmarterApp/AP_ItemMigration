@@ -35,8 +35,9 @@ itembank:
   localBaseDir: "${HOME}/ItemBank"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-5"
+  systemVersion: "iat-6"
   reportRepoName: "ItemBankReports"
+  resultsPerPageFindingAllItems: "250"
 
 logging:
   level:
@@ -49,9 +50,7 @@ logging:
 migration:
   systemUsername: "item-migration@smarterbalanced.org"
   systemFullname: "Item Migration"
-  includedItems:
-    - 200004
-  migrationsEnabled: true
+  migrationsEnabled: false
   migrationSets:
     -
       migrationSetKey: "iat-5"
