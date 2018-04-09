@@ -32,11 +32,18 @@ itembank:
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-  localBaseDir: "${HOME}/ItemBank"
+# -------- PRODUCTION ---------
+#  host: "https://itembank.smarterbalanced.org"
+#  accessToken: ""
+#  user: "ap-system-user"
+#  password: ""
+#  group: "iat-prod"
+  localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
   systemVersion: "iat-6"
   reportRepoName: "ItemBankReports"
+  randomizeItemClone: false
   resultsPerPageFindingAllItems: "250"
 
 logging:
@@ -50,16 +57,25 @@ logging:
 migration:
   systemUsername: "item-migration@smarterbalanced.org"
   systemFullname: "Item Migration"
+  downloadItemsEnabled: false
+  includedItems:
+    - item-200-387
+    - item-200-702
+  publishReportEnabled: false
   migrationsEnabled: false
   migrationSets:
+    -
+      migrationSetKey: "iat-4"
+      migrationDefinitions:
+        -
+          migrationName: "migration1611"
+          migrationDescription: "Migration: set item workflow status to Draft"
     -
       migrationSetKey: "iat-5"
       migrationDefinitions:
         -
           migrationName: "migrationUpdateItemVersion"
           migrationDescription: "Migration: increment item version to iat-5"
-
-
-
-
-
+        -
+          migrationName: "migrationUpdateItemVersion"
+          migrationDescription: "Migration: increment item version to iat-5"
