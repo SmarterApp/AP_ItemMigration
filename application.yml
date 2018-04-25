@@ -42,7 +42,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-7"
+  systemVersion: "iat-8"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true
   resultsPerPageFindingAllItems: "250"
@@ -86,3 +86,9 @@ migration:
         -
           migrationName: "migrationUpdateItemVersion"
           migrationDescription: "Migration: set item workflow status to Draft"
+    -
+      migrationSetKey: "iat-8"
+      migrationDefinitions:
+        -
+          migrationName: "migration1484"
+          migrationDescription: "Migration: update metadata field names"
