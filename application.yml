@@ -3,11 +3,11 @@
 #
 # Spring boot uses this file when the application is launched
 # with the root of the project set as the working directory.
-# These properties take precendence over the classpath
+# These properties take precedence over the classpath
 # application.yml.
 #
 # Using gradle from the commandline means the working
-# directory is by defaul the project root.
+# directory is by default the project root.
 #
 # Using Intellij you need to setup your run config so the
 # working directory is the project root.
@@ -27,16 +27,27 @@ spring:
     enabled: "${SESSION_CLUSTER_ENABLED:true}"
 
 itembank:
-  host: "https://gitlab-dev.smarterbalanced.org"
-  accessToken: "${GITLAB_ACCESS_TOKEN}"
-  user: "${GITLAB_USER}"
-  password: "${GITLAB_PASSWORD}"
-  group: "${GITLAB_GROUP}"
-  localBaseDir: "${HOME}/ItemBank"
+#  host: "https://gitlab-dev.smarterbalanced.org"
+#  accessToken: "${GITLAB_ACCESS_TOKEN}"
+#  user: "${GITLAB_USER}"
+#  password: "${GITLAB_PASSWORD}"
+#  group: "${GITLAB_GROUP}"
+#  group: "iat-alex"
+#  group: "iat-development"
+#  group: "iat-uat"
+# -------- PRODUCTION ---------
+  host: "https://itembank.smarterbalanced.org"
+  accessToken: ""
+  user: "ap-system-user"
+  password: ""
+  group: "iat-prod"
+  localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-5"
+  systemVersion: "iat-8"
   reportRepoName: "ItemBankReports"
+  randomizeItemClone: false
+  resultsPerPageFindingAllItems: "250"
 
 logging:
   level:
@@ -49,27 +60,16 @@ logging:
 migration:
   systemUsername: "item-migration@smarterbalanced.org"
   systemFullname: "Item Migration"
-#  includedItems:
-#    - 200004
-  migrationsEnabled: true
+  deleteItemsEnabled: false
+  downloadItemsEnabled: true
+  migrationsEnabled: false
+  publishReportEnabled: false
+  includedItems:
+    - item-200-84104
   migrationSets:
     -
-      migrationSetKey: "iat-4"
+      migrationSetKey: "iat-8.1"
       migrationDefinitions:
         -
-          migrationName: "migration1611"
-          migrationDescription: "Migration: set all items to Draft workflow status"
-        -
-          migrationName: "migrationEmpty"
-          migrationDescription: "Migration: increment item version to iat-4"
-    -
-      migrationSetKey: "iat-5"
-      migrationDefinitions:
-        -
-          migrationName: "migrationEmpty"
-          migrationDescription: "Migration: increment item version to iat-5"
-
-
-
-
-
+          migrationName: "migration1484"
+          migrationDescription: "Migration: update metadata field names"
