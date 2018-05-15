@@ -31,7 +31,7 @@ itembank:
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
-#  group: "${GITLAB_GROUP}"
+  group: "${GITLAB_GROUP}"
 #  group: "iat-alex"
 #  group: "iat-development"
 #  group: "iat-uat"
