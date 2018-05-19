@@ -44,10 +44,11 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-8"
+  systemVersion: "iat-11.1"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
+  restrictToBranchOwner: false
 
 logging:
   level:
@@ -64,8 +65,8 @@ migration:
   downloadItemsEnabled: false
   migrationsEnabled: true
   publishReportEnabled: true
-#  includedItems:
-#    - 200080
+  includedItems:
+    - 205618
   migrationSets:
     -
       migrationSetKey: "iat-8.1"
@@ -79,3 +80,9 @@ migration:
         -
           migrationName: "migration1703"
           migrationDescription: "Migration: update layout attribute for items with no associated stimulus"
+    -
+      migrationSetKey: "iat-11.1"
+      migrationDefinitions:
+        -
+          migrationName: "migration1826"
+          migrationDescription: "Migration: reformatting SAAIF files"
