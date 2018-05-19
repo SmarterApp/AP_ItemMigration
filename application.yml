@@ -66,23 +66,29 @@ migration:
   migrationsEnabled: true
   publishReportEnabled: true
   includedItems:
-    - 205618
+    - 19678
   migrationSets:
+#    -
+#      migrationSetKey: "iat-8.1"
+#      migrationDefinitions:
+#        -
+#          migrationName: "migration1484"
+#          migrationDescription: "Migration: update metadata field names"
+#    -
+#      migrationSetKey: "iat-10"
+#      migrationDefinitions:
+#        -
+#          migrationName: "migration1703"
+#          migrationDescription: "Migration: update layout attribute for items with no associated stimulus"
+#    -
+#      migrationSetKey: "iat-11.1"
+#      migrationDefinitions:
+#        -
+#          migrationName: "migration1826"
+#          migrationDescription: "Migration: reformatting SAAIF files"
     -
-      migrationSetKey: "iat-8.1"
+      migrationSetKey: "iat-11.2"
       migrationDefinitions:
         -
-          migrationName: "migration1484"
-          migrationDescription: "Migration: update metadata field names"
-    -
-      migrationSetKey: "iat-10"
-      migrationDefinitions:
-        -
-          migrationName: "migration1703"
-          migrationDescription: "Migration: update layout attribute for items with no associated stimulus"
-    -
-      migrationSetKey: "iat-11.1"
-      migrationDefinitions:
-        -
-          migrationName: "migration1826"
-          migrationDescription: "Migration: reformatting SAAIF files"
+          migrationName: "migration1827"
+          migrationDescription: "Migration: Recover primaryContentDomain value from item history"
