@@ -31,9 +31,9 @@ itembank:
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
-  group: "${GITLAB_GROUP}"
+#  group: "${GITLAB_GROUP}"
 #  group: "iat-alex"
-#  group: "iat-development"
+  group: "iat-development"
 #  group: "iat-uat"
 # -------- PRODUCTION ---------
 #  host: "https://itembank.smarterbalanced.org"
@@ -44,7 +44,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-11.1"
+  systemVersion: "iat-11"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -66,26 +66,26 @@ migration:
   migrationsEnabled: true
   publishReportEnabled: true
   includedItems:
-    - 19678
+    - 205624
   migrationSets:
-#    -
-#      migrationSetKey: "iat-8.1"
-#      migrationDefinitions:
-#        -
-#          migrationName: "migration1484"
-#          migrationDescription: "Migration: update metadata field names"
-#    -
-#      migrationSetKey: "iat-10"
-#      migrationDefinitions:
-#        -
-#          migrationName: "migration1703"
-#          migrationDescription: "Migration: update layout attribute for items with no associated stimulus"
-#    -
-#      migrationSetKey: "iat-11.1"
-#      migrationDefinitions:
-#        -
-#          migrationName: "migration1826"
-#          migrationDescription: "Migration: reformatting SAAIF files"
+    -
+      migrationSetKey: "iat-8.1"
+      migrationDefinitions:
+        -
+          migrationName: "migration1484"
+          migrationDescription: "Migration: update metadata field names"
+    -
+      migrationSetKey: "iat-10"
+      migrationDefinitions:
+        -
+          migrationName: "migration1703"
+          migrationDescription: "Migration: update layout attribute for items with no associated stimulus"
+    -
+      migrationSetKey: "iat-11.1"
+      migrationDefinitions:
+        -
+          migrationName: "migration1826"
+          migrationDescription: "Migration: reformatting SAAIF files"
     -
       migrationSetKey: "iat-11.2"
       migrationDefinitions:
