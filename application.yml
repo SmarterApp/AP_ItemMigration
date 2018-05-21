@@ -66,7 +66,7 @@ migration:
   migrationsEnabled: true
   publishReportEnabled: true
   includedItems:
-    - 205624
+    - 205629
   migrationSets:
     -
       migrationSetKey: "iat-8.1"
@@ -91,4 +91,4 @@ migration:
       migrationDefinitions:
         -
           migrationName: "migration1827"
-          migrationDescription: "Migration: Recover primaryContentDomain value from item history"
+          migrationDescription: "Migration1827: Recover primaryContentDomain value from item history"
