@@ -31,9 +31,9 @@ itembank:
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
-#  group: "${GITLAB_GROUP}"
+  group: "${GITLAB_GROUP}"
 #  group: "iat-alex"
-  group: "iat-development"
+#  group: "iat-development"
 #  group: "iat-uat"
 # -------- PRODUCTION ---------
 #  host: "https://itembank.smarterbalanced.org"
@@ -44,7 +44,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-11"
+  systemVersion: "iat-11.2"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
