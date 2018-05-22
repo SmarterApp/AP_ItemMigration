@@ -66,10 +66,7 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 5
   includedItems:
-    - 200055
-    - 200059
-    - 200061
-    - 200062
+    - 205645
   migrationSets:
     -
       migrationSetKey: "iat-11.1"
