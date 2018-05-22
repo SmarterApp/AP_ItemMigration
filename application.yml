@@ -44,7 +44,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-11.3"
+  systemVersion: "iat-11.4"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -64,9 +64,12 @@ migration:
   downloadItemsEnabled: false
   migrationsEnabled: true
   publishReportEnabled: true
+  numberOfThreads: 5
   includedItems:
-    - 205628
-    - 205637
+    - 200055
+    - 200059
+    - 200061
+    - 200062
   migrationSets:
     -
       migrationSetKey: "iat-11.1"
@@ -86,3 +89,9 @@ migration:
         -
           migrationName: "migration1828"
           migrationDescription: "Migration1828: Add TI and EQ system scoring variables"
+    -
+      migrationSetKey: "iat-11.4"
+      migrationDefinitions:
+        -
+          migrationName: "migration1832"
+          migrationDescription: "Migration1832: Transfer old EQ rubric information to the new rubric field on the Scoring tab"
