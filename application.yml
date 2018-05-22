@@ -44,11 +44,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-<<<<<<< HEAD
-  systemVersion: "iat-11.3"
-=======
   systemVersion: "iat-11.4"
->>>>>>> develop
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
