@@ -32,7 +32,7 @@ buildscript {
 }
 
 plugins {
-    id 'java'
+    id 'groovy'
     id 'idea'
     id 'checkstyle'
     id 'pmd'
@@ -98,6 +98,8 @@ dependencies {
     compile 'com.lmax:disruptor:3.3.7'
 
     compile 'io.github.openfeign:feign-gson:9.3.1'
+
+    compile 'org.codehaus.groovy:groovy:2.4.15'
 
     compileOnly 'org.projectlombok:lombok'
 

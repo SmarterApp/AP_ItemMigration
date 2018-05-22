@@ -31,9 +31,9 @@ itembank:
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
-  group: "${GITLAB_GROUP}"
+#  group: "${GITLAB_GROUP}"
 #  group: "iat-alex"
-#  group: "iat-development"
+  group: "iat-development"
 #  group: "iat-uat"
 # -------- PRODUCTION ---------
 #  host: "https://itembank.smarterbalanced.org"
@@ -44,11 +44,10 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-11.2"
+  systemVersion: "iat-11.3"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
-  restrictToBranchOwner: false
 
 logging:
   level:
@@ -66,20 +65,9 @@ migration:
   migrationsEnabled: true
   publishReportEnabled: true
   includedItems:
-    - 205630
+    - 205628
+    - 205637
   migrationSets:
-    -
-      migrationSetKey: "iat-8.1"
-      migrationDefinitions:
-        -
-          migrationName: "migration1484"
-          migrationDescription: "Migration: update metadata field names"
-    -
-      migrationSetKey: "iat-10"
-      migrationDefinitions:
-        -
-          migrationName: "migration1703"
-          migrationDescription: "Migration: update layout attribute for items with no associated stimulus"
     -
       migrationSetKey: "iat-11.1"
       migrationDefinitions:
@@ -92,3 +80,9 @@ migration:
         -
           migrationName: "migration1827"
           migrationDescription: "Migration1827: Recover primaryContentDomain value from item history"
+    -
+      migrationSetKey: "iat-11.3"
+      migrationDefinitions:
+        -
+          migrationName: "migration1828"
+          migrationDescription: "Migration1828: Add TI and EQ system scoring variables"
