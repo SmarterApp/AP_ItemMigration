@@ -64,9 +64,10 @@ migration:
   downloadItemsEnabled: false
   migrationsEnabled: true
   publishReportEnabled: true
-  numberOfThreads: 5
+  numberOfThreads: 10
   includedItems:
-    - 205645
+    - 200055
+    - 200036
   migrationSets:
     -
       migrationSetKey: "iat-11.1"
