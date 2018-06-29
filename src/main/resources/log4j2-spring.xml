@@ -7,6 +7,7 @@
         <Property name="HOSTNAME">${env:HOSTNAME:-unknown}</Property>
         <Property name="GRAYLOG_HOST">${env:GRAYLOG_HOST:-localhost}</Property>
         <Property name="GRAYLOG_PORT">${env:GRAYLOG_PORT:-12201}</Property>
+        <Property name="SYSTEM_PROFILE">${env:SYSTEM_PROFILE:-local}</Property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT" immediateFlush="false">
@@ -14,8 +15,9 @@
         </Console>
         <Socket name="Graylog" protocol="udp" host="${GRAYLOG_HOST}" port="${GRAYLOG_PORT}" immediateFlush="false">
             <GelfLayout host="${HOSTNAME}" compressionType="ZLIB" compressionThreshold="1024">
-                <KeyValuePair key="application" value="item-migration"/>
+                <KeyValuePair key="application" value="iat-migration"/>
                 <KeyValuePair key="system" value="iat"/>
+                <KeyValuePair key="system_profile" value="${SYSTEM_PROFILE}"/>
             </GelfLayout>
         </Socket>
     </Appenders>
@@ -32,7 +34,6 @@
         <Logger name="org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration" level="warn"/>
         <Logger name="org.springframework.boot.actuate.endpoint.jmx" level="warn"/>
         <Logger name="org.thymeleaf" level="warn"/>
-
         <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="Graylog"/>
