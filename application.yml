@@ -31,22 +31,23 @@ itembank:
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
-#  group: "${GITLAB_GROUP}"
+  group: "${GITLAB_GROUP}"
 #  group: "iat-alex"
-  group: "iat-development"
+#  group: "iat-development"
 #  group: "iat-uat"
-# -------- PRODUCTION ---------
-#  host: "https://itembank.smarterbalanced.org"
+# -------- START PRODUCTION ---------
+#  host: ""
 #  accessToken: ""
-#  user: "ap-system-user"
+#  user: ""
 #  password: ""
-#  group: "iat-prod"
+#  group: ""
+# -------- END PRODUCTION ---------
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-11.4"
+  systemVersion: "iat-17"
   reportRepoName: "ItemBankReports"
-  randomizeItemClone: true #set true for migration; false for download
+  randomizeItemClone: true              #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
 
 logging:
@@ -66,30 +67,11 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 10
   includedItems:
-    - 200055
-    - 200036
+    - 200135
   migrationSets:
     -
-      migrationSetKey: "iat-11.1"
+      migrationSetKey: "iat-17"
       migrationDefinitions:
         -
-          migrationName: "migration1826"
-          migrationDescription: "Migration: reformatting SAAIF files"
-    -
-      migrationSetKey: "iat-11.2"
-      migrationDefinitions:
-        -
-          migrationName: "migration1827"
-          migrationDescription: "Migration1827: Recover primaryContentDomain value from item history"
-    -
-      migrationSetKey: "iat-11.3"
-      migrationDefinitions:
-        -
-          migrationName: "migration1828"
-          migrationDescription: "Migration1828: Add TI and EQ system scoring variables"
-    -
-      migrationSetKey: "iat-11.4"
-      migrationDefinitions:
-        -
-          migrationName: "migration1832"
-          migrationDescription: "Migration1832: Transfer old EQ rubric information to the new rubric field on the Scoring tab"
+          migrationName: "migration1764"
+          migrationDescription: "Migration: Update SpecificationsVersion metadata field"
