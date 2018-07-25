@@ -32,7 +32,6 @@ itembank:
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-#  group: "iat-alex"
 #  group: "iat-development"
 #  group: "iat-uat"
 # -------- START PRODUCTION ---------
@@ -61,13 +60,13 @@ logging:
 migration:
   systemUsername: "item-migration@smarterbalanced.org"
   systemFullname: "Item Migration"
-  deleteItemsEnabled: false
+  deleteItemsEnabled: true
   downloadItemsEnabled: false
-  migrationsEnabled: true
+  migrationsEnabled: false
   publishReportEnabled: true
   numberOfThreads: 10
-  includedItems:
-    - 200135
+  includedItems:                        #if includedItems is empty all items in itembank.group will be included
+    - 19519
   migrationSets:
     -
       migrationSetKey: "iat-17"
