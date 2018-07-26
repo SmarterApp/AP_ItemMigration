@@ -60,12 +60,12 @@ logging:
 migration:
   systemUsername: "item-migration@smarterbalanced.org"
   systemFullname: "Item Migration"
-  deleteItemsEnabled: true
+  deleteItemsEnabled: false
   downloadItemsEnabled: false
-  migrationsEnabled: false
+  migrationsEnabled: true
   publishReportEnabled: true
   numberOfThreads: 10
-  includedItems:                 #if includedItems is empty all items in itembank.group will be included
+  includedItems:
     - 1284
     - 1283
     - 1282
