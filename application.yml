@@ -46,7 +46,7 @@ itembank:
   bankKey: "187"
   systemVersion: "iat-17"
   reportRepoName: "ItemBankReports"
-  randomizeItemClone: true              #set true for migration; false for download
+  randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
 
 logging:
@@ -65,105 +65,23 @@ migration:
   migrationsEnabled: false
   publishReportEnabled: true
   numberOfThreads: 10
-  includedItems:                        #if includedItems is empty all items in itembank.group will be included
-    - 341
-    - 357
-    - 489
-    - 491
-    - 505
-    - 596
-    - 882
-    - 1342
-    - 1354
-    - 1368
-    - 1382
-    - 1666
-    - 1680
-    - 1786
-    - 1882
-    - 1884
-    - 1890
-    - 2654
-    - 2783
-    - 2836
-    - 2838
-    - 2840
-    - 3174
-    - 3180
-    - 3212
-    - 3218
-    - 3472
-    - 3498
-    - 3684
-    - 3703
-    - 4476
-    - 4574
-    - 4724
-    - 4728
-    - 4744
-    - 5096
-    - 5172
-    - 5559
-    - 5573
-    - 5575
-    - 5581
-    - 5587
-    - 5597
-    - 5613
-    - 5643
-    - 5645
-    - 5647
-    - 5649
-    - 5653
-    - 5655
-    - 6022
-    - 6034
-    - 7190
-    - 7471
-    - 7541
-    - 8054
-    - 8078
-    - 9307
-    - 10230
-    - 10232
-    - 11844
-    - 12204
-    - 12230
-    - 12286
-    - 12300
-    - 13610
-    - 13612
-    - 13616
-    - 13618
-    - 13626
-    - 13636
-    - 13670
-    - 14981
-    - 15012
-    - 18491
-    - 18597
-    - 18611
-    - 18619
-    - 18639
-    - 18662
-    - 18670
-    - 18698
-    - 18722
-    - 18757
-    - 19715
-    - 20674
-    - 20769
-    - 20821
-    - 20974
-    - 21049
-    - 21063
-    - 21077
-    - 21079
-    - 21654
-    - 22381
-    - 24495
-    - 27387
-    - 30101
+  includedItems:                 #if includedItems is empty all items in itembank.group will be included
+    - 1284
+    - 1283
+    - 1282
+    - 1281
+    - 1280
+    - 1276
+    - 1275
+    - 1274
+    - 1273
+    - 1268
+    - 1267
+    - 1266
+    - 1264
+    - 1262
+    - 1261
+    - 1260
   migrationSets:
     -
       migrationSetKey: "iat-17"
