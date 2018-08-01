@@ -32,7 +32,6 @@ itembank:
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-#  group: "iat-alex"
 #  group: "iat-development"
 #  group: "iat-uat"
 # -------- START PRODUCTION ---------
@@ -47,7 +46,7 @@ itembank:
   bankKey: "187"
   systemVersion: "iat-17"
   reportRepoName: "ItemBankReports"
-  randomizeItemClone: true              #set true for migration; false for download
+  randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
 
 logging:
@@ -67,7 +66,22 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 10
   includedItems:
-    - 200135
+    - 1284
+    - 1283
+    - 1282
+    - 1281
+    - 1280
+    - 1276
+    - 1275
+    - 1274
+    - 1273
+    - 1268
+    - 1267
+    - 1266
+    - 1264
+    - 1262
+    - 1261
+    - 1260
   migrationSets:
     -
       migrationSetKey: "iat-17"
