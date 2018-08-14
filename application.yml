@@ -72,26 +72,17 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 10
   includedItems:
-    - 1284
-    - 1283
-    - 1282
-    - 1281
-    - 1280
-    - 1276
-    - 1275
-    - 1274
-    - 1273
-    - 1268
-    - 1267
-    - 1266
-    - 1264
-    - 1262
-    - 1261
-    - 1260
+    - 7894
   migrationSets:
+#    -
+#      migrationSetKey: "iat-17"
+#      migrationDefinitions:
+#        -
+#          migrationName: "migration1764"
+#          migrationDescription: "Migration: Update SpecificationsVersion metadata field"
     -
-      migrationSetKey: "iat-17"
+      migrationSetKey: "iat-18"
       migrationDefinitions:
         -
-          migrationName: "migration1764"
-          migrationDescription: "Migration: Update SpecificationsVersion metadata field"
+          migrationName: "migration1985"
+          migrationDescription: "Migration: Update image and glossary file names"
