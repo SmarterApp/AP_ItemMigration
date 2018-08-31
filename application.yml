@@ -86,6 +86,9 @@ migration:
         -
           migrationName: "migration1985"
           migrationDescription: "Migration: Update image and glossary file names"
+    -
+      migrationSetKey: "iat-19"
+      migrationDefinitions:
         -
           migrationName: "migration2082"
-          migrationDescription: ""
+          migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
