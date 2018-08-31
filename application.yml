@@ -72,7 +72,7 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 10
   includedItems:
-    - 7894
+    - 200003
   migrationSets:
 #    -
 #      migrationSetKey: "iat-17"
@@ -86,3 +86,9 @@ migration:
         -
           migrationName: "migration1985"
           migrationDescription: "Migration: Update image and glossary file names"
+    -
+      migrationSetKey: "iat-19"
+      migrationDefinitions:
+        -
+          migrationName: "migration2082"
+          migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
