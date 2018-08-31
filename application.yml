@@ -72,7 +72,7 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 10
   includedItems:
-    - 7894
+    - 200003
   migrationSets:
 #    -
 #      migrationSetKey: "iat-17"
@@ -86,3 +86,6 @@ migration:
         -
           migrationName: "migration1985"
           migrationDescription: "Migration: Update image and glossary file names"
+        -
+          migrationName: "migration2082"
+          migrationDescription: ""
