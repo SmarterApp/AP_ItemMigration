@@ -9,12 +9,6 @@ security:
 spring:
   session:
     enabled: "false"
-  autoconfigure:
-    exclude:
-    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-    - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
-    - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
-    - org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
 
 cache:
   expirationSeconds: 30
@@ -26,9 +20,6 @@ itembank:
 data:
   loader:
     enabled: "true"
-
-flyway:
-  enabled: false
 
 tasks:
   itemCleanupThresholdMillis : "30000"

@@ -22,7 +22,7 @@ ${error.itemId?left_pad(10)},${error.branchName?left_pad(40)},${error.migrationS
 
 
 =======================
-Successful Migrations
+Report Details
 =======================
 <#list report.itemResults as itemResult>
 Item ${itemResult.itemId}
@@ -31,3 +31,10 @@ Item ${itemResult.itemId}
     </#list>
 </#list>
 
+
+=======================
+Post Migration Results - Sync Item Bank to Data Store
+=======================
+<#list report.itemResults as itemResult>
+${itemResult.postMigrationReport}
+</#list>

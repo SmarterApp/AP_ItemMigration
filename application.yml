@@ -25,12 +25,11 @@ security:
 spring:
   session:
     enabled: "${SESSION_CLUSTER_ENABLED:true}"
-  autoconfigure:
-    exclude:
-    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-    - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
-    - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
-    - org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/iat"
+    username: "${DB_USER}"
+    password: "${DB_PASSWORD}"
+    validationQuery: "SELECT 1"
 
 itembank:
   host: "https://gitlab-dev.smarterbalanced.org"
@@ -38,8 +37,6 @@ itembank:
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-#  group: "iat-development"
-#  group: "iat-uat"
 # -------- START PRODUCTION ---------
 #  host: ""
 #  accessToken: ""
@@ -50,10 +47,18 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-17"
+  systemVersion: "iat-19"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
+  manager:
+    enabled: true
+  aws:
+    endpointUrl: "https://s3.us-east-2.amazonaws.com"
+    region: "us-east-2"
+    bucketName: "${itembank.group}"
+    accessKey: "${IAT_AWS_ACCESS_KEY}"
+    secretKey: "${IAT_AWS_ACCESS_SECRET}"
 
 logging:
   level:
@@ -71,24 +76,29 @@ migration:
   migrationsEnabled: true
   publishReportEnabled: true
   numberOfThreads: 10
-  includedItems:
-    - 200003
+  itemPostMigrationEnabled: true
+  itemPostMigrationName: "itemPostMigration2170"
+#  includedItems:
+#    - 208060
   migrationSets:
-#    -
-#      migrationSetKey: "iat-17"
-#      migrationDefinitions:
-#        -
-#          migrationName: "migration1764"
-#          migrationDescription: "Migration: Update SpecificationsVersion metadata field"
     -
-      migrationSetKey: "iat-18"
+      migrationSetKey: "iat-17"
       migrationDefinitions:
         -
-          migrationName: "migration1985"
-          migrationDescription: "Migration: Update image and glossary file names"
+          migrationName: "migration1764"
+          migrationDescription: "Migration: Update SpecificationsVersion metadata field"
     -
       migrationSetKey: "iat-19"
       migrationDefinitions:
         -
           migrationName: "migration2082"
           migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+
+itembank:
+  group: "iat-development"
