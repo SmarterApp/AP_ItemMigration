@@ -33,7 +33,7 @@ Item ${itemResult.itemId}
 
 
 =======================
-Post Migration Results - Sync Item Bank to Data Store
+Sync Item Bank to Data Store
 =======================
 <#list report.itemResults as itemResult>
 ${itemResult.postMigrationReport}
