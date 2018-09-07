@@ -25,6 +25,11 @@ security:
 spring:
   session:
     enabled: "${SESSION_CLUSTER_ENABLED:true}"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/iat"
+    username: "${DB_USER}"
+    password: "${DB_PASSWORD}"
+    validationQuery: "SELECT 1"
 
 itembank:
   host: "https://gitlab-dev.smarterbalanced.org"
@@ -32,8 +37,6 @@ itembank:
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-#  group: "iat-development"
-#  group: "iat-uat"
 # -------- START PRODUCTION ---------
 #  host: ""
 #  accessToken: ""
@@ -44,10 +47,18 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-17"
+  systemVersion: "iat-20"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
+  manager:
+    enabled: true
+  aws:
+    endpointUrl: "https://s3.us-east-2.amazonaws.com"
+    region: "us-east-2"
+    bucketName: "${itembank.group}"
+    accessKey: "${IAT_AWS_ACCESS_KEY}"
+    secretKey: "${IAT_AWS_ACCESS_SECRET}"
 
 logging:
   level:
@@ -65,23 +76,9 @@ migration:
   migrationsEnabled: true
   publishReportEnabled: true
   numberOfThreads: 10
+  itemPostMigrationEnabled: true
   includedItems:
-    - 1284
-    - 1283
-    - 1282
-    - 1281
-    - 1280
-    - 1276
-    - 1275
-    - 1274
-    - 1273
-    - 1268
-    - 1267
-    - 1266
-    - 1264
-    - 1262
-    - 1261
-    - 1260
+    - 208060
   migrationSets:
     -
       migrationSetKey: "iat-17"
@@ -89,3 +86,24 @@ migration:
         -
           migrationName: "migration1764"
           migrationDescription: "Migration: Update SpecificationsVersion metadata field"
+    -
+      migrationSetKey: "iat-19"
+      migrationDefinitions:
+        -
+          migrationName: "migration2082"
+          migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
+    -
+      migrationSetKey: "iat-20"
+      migrationDefinitions:
+        -
+          migrationName: "migration2170"
+          migrationDescription: "Migration: Ingest the item bank into the data store"
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+
+itembank:
+  group: "iat-development"
