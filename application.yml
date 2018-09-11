@@ -47,7 +47,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-19.1"
+  systemVersion: "iat-20"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -79,7 +79,19 @@ migration:
   itemPostMigrationEnabled: true
   includedItems:
     - 208060
-#    - 207190
+    - 207190
+    - 207244
+    - 207211
+    - 207165
+    - 206166
+    - 206061
+    - 205986
+    - 205878
+    - 205859
+    - 205663
+    - 205275
+    - 205231
+    - 205203
   migrationSets:
     -
       migrationSetKey: "iat-17"
@@ -94,7 +106,7 @@ migration:
           migrationName: "migration2082"
           migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
     -
-      migrationSetKey: "iat-19.1"
+      migrationSetKey: "iat-20"
       migrationDefinitions:
         -
           migrationName: "migration2170"
