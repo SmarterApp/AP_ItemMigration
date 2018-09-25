@@ -51,8 +51,8 @@ itembank:
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
-  manager:
-    enabled: true
+  enabled:
+    database: true
   aws:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
@@ -77,21 +77,9 @@ migration:
   publishReportEnabled: true
   numberOfThreads: 10
   itemPostMigrationEnabled: true
-  includedItems:
-    - 208060
-    - 207190
-    - 207244
-    - 207211
-    - 207165
-    - 206166
-    - 206061
-    - 205986
-    - 205878
-    - 205859
-    - 205663
-    - 205275
-    - 205231
-    - 205203
+  syncToDataStore: true
+#  includedItems:
+#    - 200000
   migrationSets:
     -
       migrationSetKey: "iat-17"

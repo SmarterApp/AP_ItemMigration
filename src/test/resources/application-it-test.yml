@@ -4,30 +4,28 @@
 # --------------------------------------------------------
 security:
   basic:
-    enabled: "false"
+    enabled: false
 
 spring:
   session:
-    enabled: "false"
-
-cache:
-  expirationSeconds: 30
+    enabled: false
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+    - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+    - org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
 
 itembank:
   test:
-    enabled: "true"
-
-data:
-  loader:
-    enabled: "true"
-
-tasks:
-  itemCleanupThresholdMillis : "30000"
-  itemCleanupRunEveryMillis: "30000"
+    enabled: true
+  enabled:
+    database: false
 
 migration:
   publishReportEnabled: false
   migrationsEnabled: false
+  syncToDataStore: false
 
 ---
 spring:
