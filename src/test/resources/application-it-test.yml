@@ -21,11 +21,14 @@ itembank:
     enabled: true
   enabled:
     database: false
+    producer: false
 
 migration:
   publishReportEnabled: false
   migrationsEnabled: false
   syncToDataStore: false
+  data-store-migrations:
+    enabled: false
 
 ---
 spring:
