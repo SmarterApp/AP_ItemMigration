@@ -1,17 +1,3 @@
-# --------------------------------------------------------
-# These properties are the local development properties.
-#
-# Spring boot uses this file when the application is launched
-# with the root of the project set as the working directory.
-# These properties take precedence over the classpath
-# application.yml.
-#
-# Using gradle from the commandline means the working
-# directory is by default the project root.
-#
-# Using Intellij you need to setup your run config so the
-# working directory is the project root.
-# --------------------------------------------------------
 server:
   port: 8088
 
@@ -37,13 +23,13 @@ itembank:
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-# -------- START PRODUCTION ---------
-#  host: ""
-#  accessToken: ""
-#  user: ""
-#  password: ""
-#  group: ""
-# -------- END PRODUCTION ---------
+  # -------- START PRODUCTION ---------
+  #  host: ""
+  #  accessToken: ""
+  #  user: ""
+  #  password: ""
+  #  group: ""
+  # -------- END PRODUCTION ---------
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
@@ -53,6 +39,7 @@ itembank:
   resultsPerPageFindingAllItems: "250"
   enabled:
     database: true
+    producer: true
   aws:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
@@ -69,37 +56,34 @@ logging:
           common: "info"
 
 migration:
-  systemUsername: "item-migration@smarterbalanced.org"
-  systemFullname: "Item Migration"
-  deleteItemsEnabled: false
-  downloadItemsEnabled: false
-  migrationsEnabled: true
-  publishReportEnabled: true
-  numberOfThreads: 10
-  itemPostMigrationEnabled: true
+  numberOfThreads: 5
+  migrationsEnabled: false
   syncToDataStore: true
+  publishReportEnabled: true
 #  includedItems:
-#    - 200000
+#  - 208152
+#  - 208117
   migrationSets:
-    -
-      migrationSetKey: "iat-17"
+  - migrationSetKey: "iat-17"
+    migrationDefinitions:
+    - migrationName: "migration1764"
+      migrationDescription: "Migration: Update SpecificationsVersion metadata field"
+  - migrationSetKey: "iat-19"
+    migrationDefinitions:
+    - migrationName: "migration2082"
+      migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
+  - migrationSetKey: "iat-20"
+    migrationDefinitions:
+    - migrationName: "migration2170"
+      migrationDescription: "Migration: Ingest the item bank into the data store"
+  data-store-migrations:
+    enabled: true
+    migrationSets:
+    - migrationSetKey: "iat-21"
       migrationDefinitions:
-        -
-          migrationName: "migration1764"
-          migrationDescription: "Migration: Update SpecificationsVersion metadata field"
-    -
-      migrationSetKey: "iat-19"
-      migrationDefinitions:
-        -
-          migrationName: "migration2082"
-          migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
-    -
-      migrationSetKey: "iat-20"
-      migrationDefinitions:
-        -
-          migrationName: "migration2170"
-          migrationDescription: "Migration: Ingest the item bank into the data store"
-
+      - migrationName: "migration2324"
+        migrateBranches: true
+        migrationDescription: "Migration: Generate QRX scoring file for EBSR item types"
 ---
 spring:
   profiles: dev
