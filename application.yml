@@ -59,8 +59,8 @@ migration:
   numberOfThreads: 5
   migrationsEnabled: false
   publishReportEnabled: true
-#  includedItems:
-#  - 208152
+  includedItems:
+#  - 206251
 #  - 208117
   migrationSets:
 #  - migrationSetKey: "iat-17"
@@ -76,13 +76,12 @@ migration:
     - migrationName: "migration2170"
       migrationDescription: "Migration: Ingest the item bank into the data store"
   data-store-migrations:
-    enabled: false
+    enabled: true
     migrationSets:
     - migrationSetKey: "iat-23"
       migrationDefinitions:
       - migrationName: "migration2324"
-        migrateBranches: false
-        migrationDescription: "Migration: Regenerate SAAIF for items being created or types: EBSR, HTQS, MI, MS"
+        migrationDescription: "Migration: Regenerate SAAIF"
 ---
 spring:
   profiles: dev
