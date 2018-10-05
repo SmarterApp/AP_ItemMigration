@@ -33,7 +33,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-20"
+  systemVersion: "iat-23"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -58,32 +58,31 @@ logging:
 migration:
   numberOfThreads: 5
   migrationsEnabled: false
-  syncToDataStore: true
   publishReportEnabled: true
 #  includedItems:
 #  - 208152
 #  - 208117
   migrationSets:
-  - migrationSetKey: "iat-17"
-    migrationDefinitions:
-    - migrationName: "migration1764"
-      migrationDescription: "Migration: Update SpecificationsVersion metadata field"
-  - migrationSetKey: "iat-19"
-    migrationDefinitions:
-    - migrationName: "migration2082"
-      migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
-  - migrationSetKey: "iat-20"
+#  - migrationSetKey: "iat-17"
+#    migrationDefinitions:
+#    - migrationName: "migration1764"
+#      migrationDescription: "Migration: Update SpecificationsVersion metadata field"
+#  - migrationSetKey: "iat-19"
+#    migrationDefinitions:
+#    - migrationName: "migration2082"
+#      migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
+  - migrationSetKey: "iat-22"
     migrationDefinitions:
     - migrationName: "migration2170"
       migrationDescription: "Migration: Ingest the item bank into the data store"
   data-store-migrations:
-    enabled: true
+    enabled: false
     migrationSets:
-    - migrationSetKey: "iat-21"
+    - migrationSetKey: "iat-23"
       migrationDefinitions:
       - migrationName: "migration2324"
-        migrateBranches: true
-        migrationDescription: "Migration: Generate QRX scoring file for EBSR item types"
+        migrateBranches: false
+        migrationDescription: "Migration: Regenerate SAAIF for items being created or types: EBSR, HTQS, MI, MS"
 ---
 spring:
   profiles: dev
