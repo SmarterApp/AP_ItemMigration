@@ -60,6 +60,7 @@ migration:
   migrationsEnabled: false
   publishReportEnabled: true
   includedItems:
+#  - 200585
 #  - 206251
 #  - 208117
   migrationSets:
@@ -71,17 +72,21 @@ migration:
 #    migrationDefinitions:
 #    - migrationName: "migration2082"
 #      migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
-  - migrationSetKey: "iat-22"
-    migrationDefinitions:
-    - migrationName: "migration2170"
-      migrationDescription: "Migration: Ingest the item bank into the data store"
+#  - migrationSetKey: "iat-22"
+#    migrationDefinitions:
+#    - migrationName: "migration2170"
+#      migrationDescription: "Migration: Ingest the item bank into the data store"
   data-store-migrations:
     enabled: true
     migrationSets:
-    - migrationSetKey: "iat-23"
+#    - migrationSetKey: "iat-23"
+#      migrationDefinitions:
+#      - migrationName: "migration2324"
+#        migrationDescription: "Migration: Regenerate SAAIF"
+    - migrationsetKey: "iat-24"
       migrationDefinitions:
-      - migrationName: "migration2324"
-        migrationDescription: "Migration: Regenerate SAAIF"
+      - migrationName: "migration2225"
+        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
 ---
 spring:
   profiles: dev
