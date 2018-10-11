@@ -86,7 +86,7 @@ migration:
     - migrationsetKey: "iat-24"
       migrationDefinitions:
       - migrationName: "migration2225"
-        migrationDescription: "Rename ASL files to have STEM at the end."
+        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
 ---
 spring:
   profiles: dev
