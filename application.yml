@@ -60,7 +60,7 @@ migration:
   migrationsEnabled: false
   publishReportEnabled: true
   includedItems:
-#  - 200585
+#  - 208173
 #  - 206251
 #  - 208117
   migrationSets:
@@ -83,7 +83,7 @@ migration:
 #      migrationDefinitions:
 #      - migrationName: "migration2324"
 #        migrationDescription: "Migration: Regenerate SAAIF"
-    - migrationsetKey: "iat-24"
+    - migrationSetKey: "iat-24"
       migrationDefinitions:
       - migrationName: "migration2225"
         migrationDescription: "Migration: Rename ASL files to have STEM at the end."
