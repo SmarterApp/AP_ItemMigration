@@ -33,7 +33,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-23"
+  systemVersion: "iat-25"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -57,35 +57,19 @@ logging:
 
 migration:
   numberOfThreads: 5
-  migrationsEnabled: false
   publishReportEnabled: true
   includedItems:
 #  - 208173
-#  - 206251
-#  - 208117
-  migrationSets:
-#  - migrationSetKey: "iat-17"
-#    migrationDefinitions:
-#    - migrationName: "migration1764"
-#      migrationDescription: "Migration: Update SpecificationsVersion metadata field"
-#  - migrationSetKey: "iat-19"
-#    migrationDefinitions:
-#    - migrationName: "migration2082"
-#      migrationDescription: "Migration: Remove .wav files from glossary audio attachments"
-#  - migrationSetKey: "iat-22"
-#    migrationDefinitions:
-#    - migrationName: "migration2170"
-#      migrationDescription: "Migration: Ingest the item bank into the data store"
   data-store-migrations:
     enabled: true
     migrationSets:
-#    - migrationSetKey: "iat-23"
-#      migrationDefinitions:
-#      - migrationName: "migration2324"
-#        migrationDescription: "Migration: Regenerate SAAIF"
     - migrationSetKey: "iat-24"
       migrationDefinitions:
       - migrationName: "migration2225"
+        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
+    - migrationSetKey: "iat-25"
+      migrationDefinitions:
+      - migrationName: "migration2442"
         migrationDescription: "Migration: Rename ASL files to have STEM at the end."
 ---
 spring:
