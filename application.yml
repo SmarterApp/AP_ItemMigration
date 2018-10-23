@@ -59,7 +59,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-#  - 208173
+#  - 208183
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -70,7 +70,11 @@ migration:
     - migrationSetKey: "iat-25"
       migrationDefinitions:
       - migrationName: "migration2442"
-        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
+        migrationDescription: "Migration: Regenerate SAAIF files."
+    - migrationSetKey: "iat-26"
+      migrationDefinitions:
+      - migrationName: "migration2119"
+        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
 ---
 spring:
   profiles: dev
