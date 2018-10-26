@@ -69,12 +69,15 @@ migration:
         migrationDescription: "Migration: Rename ASL files to have STEM at the end."
     - migrationSetKey: "iat-25"
       migrationDefinitions:
-      - migrationName: "migration2442"
-        migrationDescription: "Migration: Regenerate SAAIF files."
+      - migrationName: "migration2119"
+        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
     - migrationSetKey: "iat-26"
       migrationDefinitions:
       - migrationName: "migration2119"
         migrationDescription: "Migration: Map WER rubric from plain text to rich text."
+        broadcast: false
+      - migrationName: "migration2442"
+        migrationDescription: "Migration: Regenerate SAAIF files."
 ---
 spring:
   profiles: dev
