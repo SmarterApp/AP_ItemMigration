@@ -39,6 +39,7 @@ itembank:
   resultsPerPageFindingAllItems: "250"
   enabled:
     database: true
+    broker: true
     producer: true
   aws:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
