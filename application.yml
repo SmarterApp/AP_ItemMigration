@@ -60,7 +60,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-#  - 208183
+#  - 77754
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -79,6 +79,10 @@ migration:
         broadcast: false
       - migrationName: "migration2442"
         migrationDescription: "Migration: Regenerate SAAIF files."
+    - migrationSetKey: "iat-27"
+      migrationDefinitions:
+      - migrationName: "migration2576"
+        migrationDescription: "Migration: Update imported item glossary values."
 ---
 spring:
   profiles: dev
