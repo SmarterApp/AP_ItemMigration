@@ -77,12 +77,19 @@ migration:
       - migrationName: "migration2119"
         migrationDescription: "Migration: Map WER rubric from plain text to rich text."
         broadcast: false
-      - migrationName: "migration2442"
-        migrationDescription: "Migration: Regenerate SAAIF files."
     - migrationSetKey: "iat-27"
       migrationDefinitions:
       - migrationName: "migration2576"
         migrationDescription: "Migration: Update imported item glossary values."
+    - migrationSetKey: "iat-28"
+      - migrationName: "migrationGenerateSaaif"
+        migrationDescription: "Migration2133: Update Nested tables."
+    - migrationSetKey: "iat-29"
+      - migrationName: "migrationGenerateSaaif"
+        migrationDescription: "Migration1686: Add Braille values to metadata file."
+    - migrationSetKey: "iat-30"
+      - migrationName: "migrationGenerateSaaif"
+        migrationDescription: "Migration2542: Update TTS for images."
 ---
 spring:
   profiles: dev
