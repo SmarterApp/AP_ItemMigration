@@ -82,12 +82,15 @@ migration:
       - migrationName: "migration2576"
         migrationDescription: "Migration: Update imported item glossary values."
     - migrationSetKey: "iat-28"
+      migrationDefinitions:
       - migrationName: "migrationGenerateSaaif"
         migrationDescription: "Migration2133: Update Nested tables."
     - migrationSetKey: "iat-29"
+      migrationDefinitions:
       - migrationName: "migrationGenerateSaaif"
         migrationDescription: "Migration1686: Add Braille values to metadata file."
     - migrationSetKey: "iat-30"
+      migrationDefinitions:
       - migrationName: "migrationGenerateSaaif"
         migrationDescription: "Migration2542: Update TTS for images."
 ---
