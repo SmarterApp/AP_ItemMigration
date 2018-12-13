@@ -93,6 +93,10 @@ migration:
       migrationDefinitions:
       - migrationName: "migrationGenerateSaaif"
         migrationDescription: "Migration2542: Update TTS for images."
+    - migrationSetKey: "iat-31"
+      migrationDefinitions:
+        - migrationName: "migration2669"
+          migrationDescription: "Migration2669: Update items' server managed values"
 ---
 spring:
   profiles: dev
