@@ -33,7 +33,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-25"
+  systemVersion: "iat-31"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -60,7 +60,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-#  - 77754
+  - 83796
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -97,6 +97,12 @@ migration:
       migrationDefinitions:
         - migrationName: "migration2669"
           migrationDescription: "Migration2669: Update items' server managed values"
+    - migrationSetKey: "iat-31.1"
+      migrationDefinitions:
+        - migrationName: "migration2698"
+          migrationDescription: "Migration2698: Update glossary audio file names"
+
+
 ---
 spring:
   profiles: dev
