@@ -60,7 +60,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-  - 83796
+#  - 200610
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -101,7 +101,14 @@ migration:
       migrationDefinitions:
         - migrationName: "migration2698"
           migrationDescription: "Migration2698: Update glossary audio file names"
-
+    - migrationSetKey: "iat-31.2"
+      migrationDefinitions:
+        - migrationName: "migrationGenerateSaaif"
+          migrationDescription: "Migration2690: Add intended grade to the SAAIF item content XML file"
+        - migrationName: "migrationGenerateSaaif"
+          migrationDescription: "Migration2691: Add spa language in the SAAIF metadata.xml"
+        - migrationName: "migrationGenerateSaaif"
+          migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
 
 ---
 spring:
