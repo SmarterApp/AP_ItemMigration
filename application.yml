@@ -109,6 +109,8 @@ migration:
           migrationDescription: "Migration2691: Add spa language in the SAAIF metadata.xml"
         - migrationName: "migrationGenerateSaaif"
           migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
+        - migrationName: "migrationGenerateSaaif"
+          migrationDescription: "Migration2711: Create translation TTS tags in the SAAIF item content XML file"
 
 ---
 spring:
