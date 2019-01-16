@@ -60,7 +60,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-#  - 25309
+#  - 41726
   data-store-migrations:
     enabled: true
     migrationSets:
