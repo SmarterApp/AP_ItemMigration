@@ -60,7 +60,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-#  - 41726
+#  - 44001
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -115,6 +115,10 @@ migration:
       migrationDefinitions:
         - migrationName: "migration2673"
           migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
+    - migrationSetKey: "iat-32.1"
+      migrationDefinitions:
+        - migrationName: "migration2785"
+          migrationDescription: "Migration2785: Set correct item version on imported items"
 ---
 spring:
   profiles: dev
