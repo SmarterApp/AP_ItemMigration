@@ -60,7 +60,7 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   includedItems:
-#  - 34076
+#  - 25309
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -111,7 +111,7 @@ migration:
           migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
         - migrationName: "migrationGenerateSaaif"
           migrationDescription: "Migration2711: Create translation TTS tags in the SAAIF item content XML file"
-    - migrationSetKey: "iat-32.1"
+    - migrationSetKey: "iat-32"
       migrationDefinitions:
         - migrationName: "migration2673"
           migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
