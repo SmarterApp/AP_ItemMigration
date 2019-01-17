@@ -119,6 +119,10 @@ migration:
       migrationDefinitions:
         - migrationName: "migration2785"
           migrationDescription: "Migration2785: Set correct item version on imported items"
+    - migrationSetKey: "iat-32.2"
+      migrationDefinitions:
+        - migrationName: "migration2668"
+          migrationDescription: "migration2668: EBSR, MC and MS options do not stack spanish when they only contain images"
 ---
 spring:
   profiles: dev
