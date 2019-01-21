@@ -61,7 +61,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 170646
+#  - 20279
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -119,11 +119,17 @@ migration:
         - migrationName: "migration2657"
           migrationDescription: "IAT-2657: IAT-2790: Process audio references from anchor tags"
           migrateBranches: true
+    - migrationSetKey: "iat-31.4"
+      migrationDefinitions:
+        - migrationName: "migration2619"
+          migrationDescription: "Migration2619: Populate MC options on imported items"
+          migrateBranches: true
 #    - migrationSetKey: "iat-32"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
 #      migrationDefinitions:
 #        - migrationName: "migration2668"
 #          migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
+#          migrateBranches: true
 ---
 spring:
   profiles: dev
