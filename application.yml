@@ -33,7 +33,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-31"
+  systemVersion: "iat-31.1"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
@@ -59,71 +59,111 @@ logging:
 migration:
   numberOfThreads: 5
   publishReportEnabled: true
+  syncFromGitlabEnabled: false
   includedItems:
-#  - 45984
+#  - 170646
   data-store-migrations:
     enabled: true
     migrationSets:
-    - migrationSetKey: "iat-24"
-      migrationDefinitions:
-      - migrationName: "migration2225"
-        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
-    - migrationSetKey: "iat-25"
-      migrationDefinitions:
-      - migrationName: "migration2119"
-        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
-    - migrationSetKey: "iat-26"
-      migrationDefinitions:
-      - migrationName: "migration2119"
-        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
-        broadcast: false
-    - migrationSetKey: "iat-27"
-      migrationDefinitions:
-      - migrationName: "migration2576"
-        migrationDescription: "Migration: Update imported item glossary values."
-    - migrationSetKey: "iat-28"
-      migrationDefinitions:
-      - migrationName: "migrationGenerateSaaif"
-        migrationDescription: "Migration2133: Update Nested tables."
-    - migrationSetKey: "iat-29"
-      migrationDefinitions:
-      - migrationName: "migrationGenerateSaaif"
-        migrationDescription: "Migration1686: Add Braille values to metadata file."
-    - migrationSetKey: "iat-30"
-      migrationDefinitions:
-      - migrationName: "migrationGenerateSaaif"
-        migrationDescription: "Migration2542: Update TTS for images."
-    - migrationSetKey: "iat-31"
-      migrationDefinitions:
-        - migrationName: "migration2669"
-          migrationDescription: "Migration2669: Update items' server managed values"
-    - migrationSetKey: "iat-31.1"
-      migrationDefinitions:
-        - migrationName: "migration2698"
-          migrationDescription: "Migration2698: Update glossary audio file names"
-    - migrationSetKey: "iat-31.2"
-      migrationDefinitions:
-        - migrationName: "migrationGenerateSaaif"
-          migrationDescription: "Migration2690: Add intended grade to the SAAIF item content XML file"
-        - migrationName: "migrationGenerateSaaif"
-          migrationDescription: "Migration2691: Add spa language in the SAAIF metadata.xml"
-        - migrationName: "migrationGenerateSaaif"
-          migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
-        - migrationName: "migrationGenerateSaaif"
-          migrationDescription: "Migration2711: Create translation TTS tags in the SAAIF item content XML file"
-    - migrationSetKey: "iat-32"
-      migrationDefinitions:
-        - migrationName: "migration2673"
-          migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
-    - migrationSetKey: "iat-33"
-      migrationDefinitions:
-        - migrationName: "migration2785"
-          migrationDescription: "Migration2785: Set correct item version on imported items"
-    - migrationSetKey: "iat-33.1"
-      # This migration requires the use of ap_common version 0.4.107 or higher
-      migrationDefinitions:
-        - migrationName: "migration2668"
-          migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
+#    - migrationSetKey: "iat-24"
+#      migrationDefinitions:
+#      - migrationName: "migration2225"
+#        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
+#    - migrationSetKey: "iat-25"
+#      migrationDefinitions:
+#      - migrationName: "migration2119"
+#        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
+#    - migrationSetKey: "iat-26"
+#      migrationDefinitions:
+#      - migrationName: "migration2119"
+#        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
+#        broadcast: false
+#    - migrationSetKey: "iat-27"
+#      migrationDefinitions:
+#      - migrationName: "migration2576"
+#        migrationDescription: "Migration: Update imported item glossary values."
+#    - migrationSetKey: "iat-28"
+#      migrationDefinitions:
+#      - migrationName: "migrationGenerateSaaif"
+#        migrationDescription: "Migration2133: Update Nested tables."
+#    - migrationSetKey: "iat-29"
+#      migrationDefinitions:
+#      - migrationName: "migrationGenerateSaaif"
+#        migrationDescription: "Migration1686: Add Braille values to metadata file."
+#    - migrationSetKey: "iat-30"
+#      migrationDefinitions:
+#      - migrationName: "migrationGenerateSaaif"
+#        migrationDescription: "Migration2542: Update TTS for images."
+#    - migrationSetKey: "iat-30.1"
+#      migrationDefinitions:
+#        - migrationName: "migration2669"
+#          migrationDescription: "Migration2669: Update items' server managed values"
+#    - migrationSetKey: "iat-30.2"
+#      migrationDefinitions:
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "Migration2690: Add intended grade to the SAAIF item content XML file"
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "Migration2691: Add spa language in the SAAIF metadata.xml"
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "Migration2711: Create translation TTS tags in the SAAIF item content XML file"
+#    - migrationSetKey: "iat-31.1"
+#      migrationDefinitions:
+#        - migrationName: "migration2673"
+#          migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
+#    - migrationSetKey: "iat-31.2"
+#      migrationDefinitions:
+#        - migrationName: "migration2785"
+#          migrationDescription: "Migration2785: Set correct item version on imported items"
+#    - migrationSetKey: "iat-31.3"
+#      migrationDefinitions:
+#        - migrationName: "migration2641"
+#          migrationDescription: "IAT-2641: Prepend any Stimulus title field values to the existing prompt"
+#    - migrationSetKey: "iat-31.4"
+#      migrationDefinitions:
+#        - migrationName: "migration2657"
+#          migrationDescription: "IAT-2657: IAT-2790: Process audio references from anchor tags"
+#          migrateBranches: true
+#        - migrationName: "migration2657AudioRename"
+#          migrationDescription: "IAT-2657: IAT-2789: Rename audio files with new item id"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.5"
+#      migrationDefinitions:
+#        - migrationName: "migration2619"
+#          migrationDescription: "Migration2619: Populate MC options on imported items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.6"
+#      migrationDefinitions:
+#        - migrationName: "migration2624"
+#          migrationDescription: "Migration2624: Table was stripped out of item prompt during import"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.7"
+#      migrationDefinitions:
+#        - migrationName: "migration2571"
+#          migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.8"
+#      migrationDefinitions:
+#        - migrationName: "migration2658"
+#          migrationDescription: "Migration2658: ASL file names will need to be updated to match newly imported Item ID and associated to their items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.9"
+#      migrationDefinitions:
+#        - migrationName: "migration2660"
+#          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.10"
+#      migrationDefinitions:
+#        - migrationName: "migration2659"
+#          migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-32"
+#      # This migration requires the use of ap_common version 0.4.107 or higher
+#      migrationDefinitions:
+#        - migrationName: "migration2668"
+#          migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
+#          migrateBranches: true
 ---
 spring:
   profiles: dev
