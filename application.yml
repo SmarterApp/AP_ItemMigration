@@ -61,7 +61,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 170646
+#  - 170646
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -108,21 +108,55 @@ migration:
 #          migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
 #        - migrationName: "migrationGenerateSaaif"
 #          migrationDescription: "Migration2711: Create translation TTS tags in the SAAIF item content XML file"
+#    - migrationSetKey: "iat-31.1"
+#      migrationDefinitions:
 #        - migrationName: "migration2673"
 #          migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
-    - migrationSetKey: "iat-31.1"
-      migrationDefinitions:
-        - migrationName: "migration2657"
-          migrationDescription: "IAT-2657: IAT-2790: Process audio references from anchor tags"
-          migrateBranches: true
 #    - migrationSetKey: "iat-31.2"
 #      migrationDefinitions:
 #        - migrationName: "migration2785"
 #          migrationDescription: "Migration2785: Set correct item version on imported items"
 #    - migrationSetKey: "iat-31.3"
 #      migrationDefinitions:
+#        - migrationName: "migration2641"
+#          migrationDescription: "IAT-2641: Prepend any Stimulus title field values to the existing prompt"
+#    - migrationSetKey: "iat-31.4"
+#      migrationDefinitions:
+#        - migrationName: "migration2657"
+#          migrationDescription: "IAT-2657: IAT-2790: Process audio references from anchor tags"
+#          migrateBranches: true
+#        - migrationName: "migration2657AudioRename"
+#          migrationDescription: "IAT-2657: IAT-2789: Rename audio files with new item id"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.5"
+#      migrationDefinitions:
 #        - migrationName: "migration2619"
 #          migrationDescription: "Migration2619: Populate MC options on imported items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.6"
+#      migrationDefinitions:
+#        - migrationName: "migration2624"
+#          migrationDescription: "Migration2624: Table was stripped out of item prompt during import"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.7"
+#      migrationDefinitions:
+#        - migrationName: "migration2571"
+#          migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.8"
+#      migrationDefinitions:
+#        - migrationName: "migration2658"
+#          migrationDescription: "Migration2658: ASL file names will need to be updated to match newly imported Item ID and associated to their items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.9"
+#      migrationDefinitions:
+#        - migrationName: "migration2660"
+#          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.10"
+#      migrationDefinitions:
+#        - migrationName: "migration2659"
+#          migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
 #    - migrationSetKey: "iat-32"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
