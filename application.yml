@@ -61,7 +61,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 20279
+#  - 170489
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -123,6 +123,11 @@ migration:
       migrationDefinitions:
         - migrationName: "migration2619"
           migrationDescription: "Migration2619: Populate MC options on imported items"
+          migrateBranches: true
+    - migrationSetKey: "iat-31.5"
+      migrationDefinitions:
+        - migrationName: "migration2641"
+          migrationDescription: "Migration2641: Prepend any Stimulus title field values to the existing prompt"
           migrateBranches: true
 #    - migrationSetKey: "iat-32"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
