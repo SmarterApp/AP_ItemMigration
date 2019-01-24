@@ -61,7 +61,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 170646
+  - 45734
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -138,22 +138,27 @@ migration:
 #        - migrationName: "migration2624"
 #          migrationDescription: "Migration2624: Table was stripped out of item prompt during import"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.7"
+    - migrationSetKey: "iat-31.7"
+      migrationDefinitions:
+        - migrationName: "migration2670"
+          migrationDescription: "Migration2670: Image TTS tags were lost during import"
+          migrateBranches: true
+#    - migrationSetKey: "iat-31.8"
 #      migrationDefinitions:
 #        - migrationName: "migration2571"
 #          migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.8"
+#    - migrationSetKey: "iat-31.9"
 #      migrationDefinitions:
 #        - migrationName: "migration2658"
 #          migrationDescription: "Migration2658: ASL file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.9"
+#    - migrationSetKey: "iat-31.10"
 #      migrationDefinitions:
 #        - migrationName: "migration2660"
 #          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.10"
+#    - migrationSetKey: "iat-31.11"
 #      migrationDefinitions:
 #        - migrationName: "migration2659"
 #          migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
