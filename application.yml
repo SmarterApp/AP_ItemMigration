@@ -61,7 +61,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 45734
+#  - 45734
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -138,11 +138,11 @@ migration:
 #        - migrationName: "migration2624"
 #          migrationDescription: "Migration2624: Table was stripped out of item prompt during import"
 #          migrateBranches: true
-    - migrationSetKey: "iat-31.7"
-      migrationDefinitions:
-        - migrationName: "migration2670"
-          migrationDescription: "Migration2670: Image TTS tags were lost during import"
-          migrateBranches: true
+#    - migrationSetKey: "iat-31.7"
+#      migrationDefinitions:
+#        - migrationName: "migration2670"
+#          migrationDescription: "Migration2670: Image TTS tags were lost during import"
+#          migrateBranches: true
 #    - migrationSetKey: "iat-31.8"
 #      migrationDefinitions:
 #        - migrationName: "migration2571"
