@@ -33,6 +33,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
+  # the system version does not do anything when running locally, the set key is what is used/saved on the entity
   systemVersion: "iat-31.1"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
@@ -61,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 45734
+#  - 76987
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -162,6 +163,16 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2659"
 #          migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.12"
+#      migrationDefinitions:
+#        - migrationName: "migration2593"
+#          migrationDescription: "Migration2593: English text not removed from translations content in TI items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.13"
+#      migrationDefinitions:
+#        - migrationName: "migration2750"
+#          migrationDescription: "Migration2750: QRX files were not imported to certain items"
 #          migrateBranches: true
 #    - migrationSetKey: "iat-32"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
