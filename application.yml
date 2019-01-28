@@ -163,6 +163,11 @@ migration:
 #        - migrationName: "migration2659"
 #          migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
+#    - migrationSetKey: "iat-31.12"
+#      migrationDefinitions:
+#        - migrationName: "migration2593"
+#          migrationDescription: "Migration2539: English text not removed from translations content in TI items"
+#          migrateBranches: true
 #    - migrationSetKey: "iat-32"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
 #      migrationDefinitions:
