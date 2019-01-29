@@ -176,11 +176,11 @@ migration:
 #        - migrationName: "migration2656"
 #          migrationDescription: "Migration2656: correct imported braille file subtypes"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.14"
-#      migrationDefinitions:
-#        - migrationName: "migration2642"
-#          migrationDescription: "Migration2642: Set TTS metadata values"
-#          migrateBranches: true
+    - migrationSetKey: "iat-31.14"
+      migrationDefinitions:
+        - migrationName: "migration2642"
+          migrationDescription: "Migration2642: Set TTS metadata values"
+          migrateBranches: true
 #    - migrationSetKey: "iat-31.15"
 #      migrationDefinitions:
 #        - migrationName: "migration2597"
