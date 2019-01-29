@@ -33,6 +33,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
   bankKey: "187"
+  # the system version does not do anything when running locally, the set key is what is used/saved on the entity
   systemVersion: "iat-31.1"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
@@ -61,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 170646
+#  - 41704
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -125,9 +126,6 @@ migration:
 #        - migrationName: "migration2657"
 #          migrationDescription: "IAT-2657: IAT-2790: Process audio references from anchor tags"
 #          migrateBranches: true
-#        - migrationName: "migration2657AudioRename"
-#          migrationDescription: "IAT-2657: IAT-2789: Rename audio files with new item id"
-#          migrateBranches: true
 #    - migrationSetKey: "iat-31.5"
 #      migrationDefinitions:
 #        - migrationName: "migration2619"
@@ -140,24 +138,117 @@ migration:
 #          migrateBranches: true
 #    - migrationSetKey: "iat-31.7"
 #      migrationDefinitions:
+#        - migrationName: "migration2670"
+#          migrationDescription: "Migration2670: Image TTS tags were lost during import"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.8"
+#      migrationDefinitions:
 #        - migrationName: "migration2571"
 #          migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.8"
+#    - migrationSetKey: "iat-31.9"
 #      migrationDefinitions:
 #        - migrationName: "migration2658"
 #          migrationDescription: "Migration2658: ASL file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.9"
+#    - migrationSetKey: "iat-31.10"
 #      migrationDefinitions:
 #        - migrationName: "migration2660"
 #          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.10"
+#    - migrationSetKey: "iat-31.11"
 #      migrationDefinitions:
 #        - migrationName: "migration2659"
 #          migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
+#    - migrationSetKey: "iat-31.12"
+#      migrationDefinitions:
+#        - migrationName: "migration2593"
+#          migrationDescription: "Migration2593: English text not removed from translations content in TI items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.13"
+#      migrationDefinitions:
+#        - migrationName: "migration2750"
+#          migrationDescription: "Migration2750: QRX files were not imported to certain items"
+#          migrateBranches: true#
+#    - migrationSetKey: "iat-31.26"
+#      migrationDefinitions:
+#        - migrationName: "migration2656"
+#          migrationDescription: "Migration2656: correct imported braille file subtypes"
+#          migrateBranches: true
+    - migrationSetKey: "iat-31.14"
+      migrationDefinitions:
+        - migrationName: "migration2642"
+          migrationDescription: "Migration2642: Set TTS metadata values"
+          migrateBranches: true
+#    - migrationSetKey: "iat-31.15"
+#      migrationDefinitions:
+#        - migrationName: "migration2597"
+#          migrationDescription: "Migration2597: Tutorial/ASL previewing intermittently"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.16"
+#      migrationDefinitions:
+#        - migrationName: "migration2723"
+#          migrationDescription: "Migration2723: Re-import 409 items that didn't sync to GitLab during initial import"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.17"
+#      migrationDefinitions:
+#        - migrationName: "migration2655"
+#          migrationDescription: "Migration2655: Import cleanup: Glossary m4a audio files did not import properly"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.18"
+#      migrationDefinitions:
+#        - migrationName: "migration2751"
+#          migrationDescription: "Migration2751: Import cleanup: Some attachments were not copied during import due to file extension capitalization"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.19"
+#      migrationDefinitions:
+#        - migrationName: "migration2608"
+#          migrationDescription: "Migration2608: Import: 404 errors when previewing TI and MS items imported to production"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.20"
+#      migrationDefinitions:
+#        - migrationName: "migration2620"
+#          migrationDescription: "Migration2620: Import Cleanup: Cannot read property 'changedOn' of undefined during preview"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.21"
+#      migrationDefinitions:
+#        - migrationName: "migration2572"
+#          migrationDescription: "Migration2572: Import cleanup: Ability to view Tutorial is missing in the menu when previewing items with translations"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.22"
+#      migrationDefinitions:
+#        - migrationName: "migration2638"
+#          migrationDescription: "Migration2638: Some metadata fields display null values in search results but those fields have values in IAT"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.23"
+#      migrationDefinitions:
+#        - migrationName: "migration2629"
+#          migrationDescription: "Migration2629: Import: Metadata values not mapped correctly on items with more than one ELA standard publication"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.24"
+#      migrationDefinitions:
+#        - migrationName: "migration2605"
+#          migrationDescription: "Migration2605: Import cleanup: Editing an imported glossary term that has rich text formatting applied loses link to glossary entry"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.25"
+#      migrationDefinitions:
+#        - migrationName: "migration2567"
+#          migrationDescription: "Migration2567: Import cleanup: MC and MS Options get misaligned if previewing with translations enabled"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.26"
+#      migrationDefinitions:
+#        - migrationName: "migration2656"
+#          migrationDescription: "Migration2656: Import Cleanup: 14k imported items have wrong Braille sub-type"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.27"
+#      migrationDefinitions:
+#        - migrationName: "migration2668"
+#          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names"
+#          migrateBranches: true
+
+
+
 #    - migrationSetKey: "iat-32"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
 #      migrationDefinitions:
