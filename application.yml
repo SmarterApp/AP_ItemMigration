@@ -176,11 +176,11 @@ migration:
 #        - migrationName: "migration2656"
 #          migrationDescription: "Migration2656: correct imported braille file subtypes"
 #          migrateBranches: true
-    - migrationSetKey: "iat-31.14"
-      migrationDefinitions:
-        - migrationName: "migration2642"
-          migrationDescription: "Migration2642: Set TTS metadata values"
-          migrateBranches: true
+#    - migrationSetKey: "iat-31.14"
+#      migrationDefinitions:
+#        - migrationName: "migration2642"
+#          migrationDescription: "Migration2642: Set TTS metadata values"
+#          migrateBranches: true
 #    - migrationSetKey: "iat-31.15"
 #      migrationDefinitions:
 #        - migrationName: "migration2597"
@@ -246,7 +246,11 @@ migration:
 #        - migrationName: "migration2668"
 #          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names"
 #          migrateBranches: true
-
+#    - migrationSetKey: "iat-31.29"
+#      migrationDefinitions:
+#        - migrationName: "migration2792"
+#          migrationDescription: "Migration2792: Set Scoring engine to AutomaticWithKeys on imported MS and EBSR items"
+#          migrateBranches: true
 
 
 #    - migrationSetKey: "iat-32"
