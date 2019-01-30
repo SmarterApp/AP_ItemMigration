@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 110194
+#  - 127920
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -255,6 +255,11 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2669Htqo"
 #          migrationDescription: "Migration2669Htqo: HTQO items are missing prompt data"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.30"
+#      migrationDefinitions:
+#        - migrationName: "migration2799"
+#          migrationDescription: "Migration2799: MI item(s) lost the correct answers during import"
 #          migrateBranches: true
 
 
