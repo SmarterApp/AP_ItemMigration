@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 110194
+#  - 110194
   data-store-migrations:
     enabled: true
     migrationSets:
