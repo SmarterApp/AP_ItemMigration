@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 41704
+#  - 127920
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -176,11 +176,11 @@ migration:
 #        - migrationName: "migration2656"
 #          migrationDescription: "Migration2656: correct imported braille file subtypes"
 #          migrateBranches: true
-    - migrationSetKey: "iat-31.14"
-      migrationDefinitions:
-        - migrationName: "migration2642"
-          migrationDescription: "Migration2642: Set TTS metadata values"
-          migrateBranches: true
+#    - migrationSetKey: "iat-31.14"
+#      migrationDefinitions:
+#        - migrationName: "migration2642"
+#          migrationDescription: "Migration2642: Set TTS metadata values"
+#          migrateBranches: true
 #    - migrationSetKey: "iat-31.15"
 #      migrationDefinitions:
 #        - migrationName: "migration2597"
@@ -245,6 +245,21 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2668"
 #          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.28"
+#      migrationDefinitions:
+#        - migrationName: "migration2792"
+#          migrationDescription: "Migration2792: Set Scoring engine to AutomaticWithKeys on imported MS and EBSR items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.29"
+#      migrationDefinitions:
+#        - migrationName: "migration2669Htqo"
+#          migrationDescription: "Migration2669Htqo: HTQO items are missing prompt data"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.30"
+#      migrationDefinitions:
+#        - migrationName: "migration2799"
+#          migrationDescription: "Migration2799: MI item(s) lost the correct answers during import"
 #          migrateBranches: true
 
 
