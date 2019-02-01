@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 127920
+  - 42809
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -241,11 +241,6 @@ migration:
 #        - migrationName: "migration2656"
 #          migrationDescription: "Migration2656: Import Cleanup: 14k imported items have wrong Braille sub-type"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.27"
-#      migrationDefinitions:
-#        - migrationName: "migration2668"
-#          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names"
-#          migrateBranches: true
 #    - migrationSetKey: "iat-31.28"
 #      migrationDefinitions:
 #        - migrationName: "migration2792"
@@ -261,14 +256,19 @@ migration:
 #        - migrationName: "migration2799"
 #          migrationDescription: "Migration2799: MI item(s) lost the correct answers during import"
 #          migrateBranches: true
+#    - migrationSetKey: "iat-31.33"
+#      migrationDefinitions:
+#        - migrationName: "migration2805"
+#          migrationDescription: "Migration2805: Set correct item prompt on imported EBSR items"
+#          migrateBranches: true
 
 
-
-#    - migrationSetKey: "iat-32"
+#    - migrationSetKey: "iat-31.27"
 #      # This migration requires the use of ap_common version 0.4.107 or higher
+#      # This migration will update all imported Ebsr items. Fixing issues defined in migration2668 and migration2567
 #      migrationDefinitions:
 #        - migrationName: "migration2668"
-#          migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
+#          migrationDescription: "migration2668: Remove images from translated item options if they are identical to the english image names\nmigration2567:MC and MS Options get misaligned if previewing with translations enabled"
 #          migrateBranches: true
 ---
 spring:
