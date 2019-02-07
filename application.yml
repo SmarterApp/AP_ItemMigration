@@ -32,7 +32,7 @@ itembank:
   # -------- END PRODUCTION ---------
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
-  bankKey: "187"
+  bankKey: "200"
   # the system version does not do anything when running locally, the set key is what is used/saved on the entity
   systemVersion: "iat-31.1"
   reportRepoName: "ItemBankReports"
@@ -61,8 +61,9 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   syncFromGitlabEnabled: false
+  gitlabProjectRenameEnabled: false
   includedItems:
-  - 42809
+#  - 76987
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -151,11 +152,11 @@ migration:
 #        - migrationName: "migration2658"
 #          migrationDescription: "Migration2658: ASL file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.10"
-#      migrationDefinitions:
-#        - migrationName: "migration2660"
-#          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
-#          migrateBranches: true
+    - migrationSetKey: "iat-31.11"
+      migrationDefinitions:
+        - migrationName: "migration2660"
+          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
+          migrateBranches: true
 #    - migrationSetKey: "iat-31.11"
 #      migrationDefinitions:
 #        - migrationName: "migration2659"
