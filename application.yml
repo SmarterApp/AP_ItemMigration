@@ -271,7 +271,10 @@ migration:
 #          migrationDescription: "migration2668: Remove images from translated item options if they are identical to the english image names\nmigration2567:MC and MS Options get misaligned if previewing with translations enabled"
 #          migrateBranches: true
 
-    - migrationSetKey: "iat-31.30"
+# This set includes hot fixes applied to all items.
+# IAT-2658 was re-opened.  It is not part of this set since 2788 will address it as well
+# 2807 requires regenerating the SAAIF for asl and braille, not just imported items
+    - migrationSetKey: "iat-32"
       migrationDefinitions:
         - migrationName: "migration2788"
           migrationDescription: "migration2788: Uploading ASL files lowercases their names breaking ASL."
@@ -279,6 +282,9 @@ migration:
         - migrationName: "migration2571"
           migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
           migrateBranches: true
+        - migrationName: "migration2807"
+          migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
+          migrateBranches: false
 ---
 spring:
   profiles: dev
