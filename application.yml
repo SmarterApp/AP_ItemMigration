@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 200000
+#  - 200000
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -270,11 +270,11 @@ migration:
 #          migrationDescription: "migration2668: Remove images from translated item options if they are identical to the english image names\nmigration2567:MC and MS Options get misaligned if previewing with translations enabled"
 #          migrateBranches: true
 #
-    - migrationSetKey: "iat-31.28"
-      migrationDefinitions:
-        - migrationName: "migration2788"
-          migrationDescription: "migration2788: Uploading ASL files lowercases their names breaking ASL."
-          migrateBranches: true
+#    - migrationSetKey: "iat-31.28"
+#      migrationDefinitions:
+#        - migrationName: "migration2788"
+#          migrationDescription: "migration2788: Uploading ASL files lowercases their names breaking ASL."
+#          migrateBranches: true
 #    - migrationSetKey: "iat-31.29"
 #      migrationDefinitions:
 #        - migrationName: "migration2571"
