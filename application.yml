@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 76987
+  - 102955
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -271,10 +271,14 @@ migration:
 #        - migrationName: "migration2708"
 #          migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
 #          migrateBranches: true
-    - migrationSetKey: "iat-32"
+#    - migrationSetKey: "iat-32"
+#      migrationDefinitions:
+#        - migrationName: "migration2729"
+#          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
+    - migrationSetKey: "iat-35"
       migrationDefinitions:
-        - migrationName: "migration2729"
-          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
+        - migrationName: "migration1615"
+          migrationDescription: "IAT-1615: Update image TTS values"
 ---
 spring:
   profiles: dev
