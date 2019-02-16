@@ -275,10 +275,12 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2729"
 #          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
-    - migrationSetKey: "iat-36"
-      migrationDefinitions:
-        - migrationName: "migration1615"
-          migrationDescription: "IAT-1615: Update image TTS values"
+
+#    - migrationSetKey: "iat-33"
+#      migrationDefinitions:
+#        - migrationName: "migration1615"
+#          migrationDescription: "IAT-1615: Update image TTS values"
+#          migrateBranches: true
 ---
 spring:
   profiles: dev
