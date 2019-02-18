@@ -151,7 +151,7 @@ migration:
 #        - migrationName: "migration2658"
 #          migrationDescription: "Migration2658: ASL file names will need to be updated to match newly imported Item ID and associated to their items"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.11"
+#    - migrationSetKey: "iat-31.10"
 #      migrationDefinitions:
 #        - migrationName: "migration2660"
 #          migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
@@ -261,9 +261,10 @@ migration:
 #        - migrationName: "migration2805"
 #          migrationDescription: "Migration2805: Set correct item prompt on imported EBSR items"
 #          migrateBranches: true
-
-# These migrations requires the use of ap_common version 0.4.107 or higher
+#
 #    - migrationSetKey: "iat-31.27"
+#      # This migration requires the use of ap_common version 0.4.107 or higher
+#      # This migration will update all imported Ebsr items. Fixing issues defined in migration2668 and migration2567
 #      migrationDefinitions:
 #        - migrationName: "migration2668"
 #          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names. \nMigration2567: MC and MS Options get misaligned if previewing with translations enabled"
@@ -271,6 +272,23 @@ migration:
 #        - migrationName: "migration2708"
 #          migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
 #          migrateBranches: true
+#
+#    - migrationSetKey: "iat-31.28"
+#      migrationDefinitions:
+#        - migrationName: "migration2788"
+#          migrationDescription: "migration2788: Uploading ASL files lowercases their names breaking ASL."
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.29"
+#      migrationDefinitions:
+#        - migrationName: "migration2571"
+#          migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.30"
+#      migrationDefinitions:
+#        - migrationName: "migration2807"
+#          migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
+#          migrateBranches: false
+#
     - migrationSetKey: "iat-32"
       migrationDefinitions:
         - migrationName: "migration2729"
@@ -280,6 +298,17 @@ spring:
   profiles: dev
   datasource:
     url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    max-active: 2
 
 itembank:
   group: "iat-development"
+
+---
+spring:
+  profiles: prod-mirror
+  datasource:
+    url: "jdbc:postgresql://tims-prod-mirror.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    max-active: 2
+
+itembank:
+  group: "iat-prod-mirror"
