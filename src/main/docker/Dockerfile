@@ -13,7 +13,9 @@ VOLUME ["/tmp"]
 
 COPY ap-item-migration.jar /
 
-RUN apk --no-cache add curl
+RUN apk add --update curl && rm -rf /var/cache/apk/*
+
+RUN apk add --update jq && rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["/usr/bin/java"]
 
