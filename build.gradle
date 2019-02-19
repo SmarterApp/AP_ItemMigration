@@ -113,8 +113,6 @@ dependencies {
 
     compile 'org.postgresql:postgresql:42.2.4'
 
-    compile 'org.reflections:reflections:0.9.11'
-
     compileOnly 'org.projectlombok:lombok'
 
     runtime 'org.springframework.boot:spring-boot-devtools'
