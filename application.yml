@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 174654
+#  - 174654
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -293,11 +293,11 @@ migration:
 #        - migrationName: "migration1615"
 #          migrationDescription: "IAT-1615: Update image TTS html markup on rich text fields"
 #          migrateBranches: true
-    - migrationSetKey: "iat-31.36"
-      migrationDefinitions:
-        - migrationName: "migration2776"
-          migrationDescription: "IAT-2776: Remove certain html style values from imported items"
-          migrateBranches: true
+#    - migrationSetKey: "iat-31.32"
+#      migrationDefinitions:
+#        - migrationName: "migration2776"
+#          migrationDescription: "IAT-2776: Remove certain html style values from imported items"
+#          migrateBranches: true
 
 #    - migrationSetKey: "iat-32"
 #      migrationDefinitions:
