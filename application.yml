@@ -310,9 +310,13 @@ migration:
 #          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
 #
 #    - migrationSetKey: "iat-33"
-#      migrationDefinitions:
+#      migrationDefinitions:#
 #        - migrationName: "migration2815"
-#          migrationDescription: "IAT-815: Validation: Both HTQ item types fail item type validation"
+#          migrationDescription: "IAT-2815: Validation: Both HTQ item types fail item type validation"
+#    - migrationSetKey: "iat-34"
+#      migrationDefinitions:
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "IAT-2364/IAT-2810: SAAIF files contain translation content for all items even when no translations are defined"
 ---
 spring:
   profiles: dev
