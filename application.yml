@@ -298,6 +298,11 @@ migration:
 #        - migrationName: "migration2776"
 #          migrationDescription: "IAT-2776: Remove certain html style values from imported items"
 #          migrateBranches: true
+#    - migrationSetKey: "iat-31.33"
+#      migrationDefinitions:
+#        - migrationName: "migration2360"
+#          migrationDescription: "IAT-2360: Update invalid Scoring Engine metadata values"
+#          migrateBranches: true
 
 #    - migrationSetKey: "iat-32"
 #      migrationDefinitions:
