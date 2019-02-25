@@ -329,7 +329,7 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migrationGenerateSaaif"
 #          migrationDescription: "IAT-2364/IAT-2810: SAAIF files contain translation content for all items even when no translations are defined"
-#    - migrationSetKey: "iat-34.11"
+#    - migrationSetKey: "iat-34.12"
 #      migrationDefinitions:
 #        - migrationName: "migrationGenerateSaaif"
 #          migrationDescription: "IAT-2662: Validation: Translated glossary errors are generated against terms with english only definitions"
