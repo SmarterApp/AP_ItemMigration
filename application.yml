@@ -231,11 +231,6 @@ migration:
 #        - migrationName: "migration2605"
 #          migrationDescription: "Migration2605: Import cleanup: Editing an imported glossary term that has rich text formatting applied loses link to glossary entry"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.25"
-#      migrationDefinitions:
-#        - migrationName: "migration2567"
-#          migrationDescription: "Migration2567: Import cleanup: MC and MS Options get misaligned if previewing with translations enabled"
-#          migrateBranches: true
 #    - migrationSetKey: "iat-31.26"
 #      migrationDefinitions:
 #        - migrationName: "migration2656"
@@ -256,23 +251,7 @@ migration:
 #        - migrationName: "migration2799"
 #          migrationDescription: "Migration2799: MI item(s) lost the correct answers during import"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.33"
-#      migrationDefinitions:
-#        - migrationName: "migration2805"
-#          migrationDescription: "Migration2805: Set correct item prompt on imported EBSR items"
-#          migrateBranches: true
-#
-#    - migrationSetKey: "iat-31.27"
-#      # This migration requires the use of ap_common version 0.4.107 or higher
-#      # This migration will update all imported Ebsr items. Fixing issues defined in migration2668 and migration2567
-#      migrationDefinitions:
-#        - migrationName: "migration2668"
-#          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names. \nMigration2567: MC and MS Options get misaligned if previewing with translations enabled"
-#          migrateBranches: true
-#        - migrationName: "migration2708"
-#          migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
-#          migrateBranches: true
-#
+
 #    - migrationSetKey: "iat-31.28"
 #      migrationDefinitions:
 #        - migrationName: "migration2788"
@@ -288,35 +267,72 @@ migration:
 #        - migrationName: "migration2807"
 #          migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
 #          migrateBranches: false
-#    - migrationSetKey: "iat-31.31"
+#
+##########################################################################################################
+#
+# Everything below is in preparation for the upcoming production release 3/9/2019.  Feel free to change
+# anything for you local development but do not check in those changes. The sequence below follows what
+# is documented on https://confluence.fairwaytech.com/display/IAT/Migrations.  In production we will
+# want to minimize the number of sets as each set puts a message on the sync queue.  Ideally we will
+# have a single set and that should be doable.  The main caveat is we must run 2729 first.
+#
+##########################################################################################################
+#
+#    - migrationSetKey: "iat-34.1"
+#      migrationDefinitions:
+#        - migrationName: "migration2729"
+#          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
+#    - migrationSetKey: "iat-34.2"
+#      migrationDefinitions:
+#        - migrationName: "migration2567"
+#          migrationDescription: "Migration2567: Import cleanup: MC and MS Options get misaligned if previewing with translations enabled"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-34.3"
+#        - migrationName: "migration2708"
+#          migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
+#      migrationDefinitions:
+#          migrateBranches: true
+#    - migrationSetKey: "iat-34.4"
+#      migrationDefinitions:
+#        - migrationName: "migration2668"
+#          migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names. \nMigration2567: MC and MS Options get misaligned if previewing with translations enabled"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-34.5"
 #      migrationDefinitions:
 #        - migrationName: "migration1615"
 #          migrationDescription: "IAT-1615: Update image TTS html markup on rich text fields"
 #          migrateBranches: true
-#    - migrationSetKey: "iat-31.32"
-#      migrationDefinitions:
-#        - migrationName: "migration2776"
-#          migrationDescription: "IAT-2776: Remove certain html style values from imported items"
-#          migrateBranches: true
-#    - migrationSetKey: "iat-31.33"
+#    - migrationSetKey: "iat-34.6"
 #      migrationDefinitions:
 #        - migrationName: "migration2360"
 #          migrationDescription: "IAT-2360: Update invalid Scoring Engine metadata values"
 #          migrateBranches: true
-#
-#    - migrationSetKey: "iat-32"
+#    - migrationSetKey: "iat-34.7"
 #      migrationDefinitions:
-#        - migrationName: "migration2729"
-#          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
-#
-#    - migrationSetKey: "iat-33"
-#      migrationDefinitions:#
+#        - migrationName: "migration2776"
+#          migrationDescription: "IAT-2776: Remove certain html style values from imported items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-34.8"
+#      migrationDefinitions:
+#        - migrationName: "migration2805"
+#          migrationDescription: "Migration2805: Set correct item prompt on imported EBSR items"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-34.9"
+#      migrationDefinitions:
 #        - migrationName: "migration2815"
 #          migrationDescription: "IAT-2815: Validation: Both HTQ item types fail item type validation"
-#    - migrationSetKey: "iat-34"
+#    - migrationSetKey: "iat-34.10"
 #      migrationDefinitions:
 #        - migrationName: "migrationGenerateSaaif"
 #          migrationDescription: "IAT-2364/IAT-2810: SAAIF files contain translation content for all items even when no translations are defined"
+#    - migrationSetKey: "iat-34.11"
+#      migrationDefinitions:
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "IAT-2364/IAT-2810: SAAIF files contain translation content for all items even when no translations are defined"
+#    - migrationSetKey: "iat-34.11"
+#      migrationDefinitions:
+#        - migrationName: "migrationGenerateSaaif"
+#          migrationDescription: "IAT-2662: Validation: Translated glossary errors are generated against terms with english only definitions"
 ---
 spring:
   profiles: dev
