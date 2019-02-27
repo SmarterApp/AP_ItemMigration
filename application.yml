@@ -329,6 +329,10 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migrationGenerateSaaif"
 #          migrationDescription: "IAT-2662: Validation: Translated glossary errors are generated against terms with english only definitions"
+#    - migrationSetKey: "iat-34.12"
+#      migrationDefinitions:
+#        - migrationName: "migration2701"
+#          migrationDescription: "migration2701: The saved metadata value for Primary Emphasis is incorrect (n/a should be NA)"
 ---
 spring:
   profiles: dev
