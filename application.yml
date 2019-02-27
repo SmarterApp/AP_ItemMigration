@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-  - 47123
+  - 42403
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -267,10 +267,10 @@ migration:
 #        - migrationName: "migration2807"
 #          migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
 #          migrateBranches: false
-    - migrationSetKey: "iat-34.12"
+    - migrationSetKey: "iat-31.31"
       migrationDefinitions:
         - migrationName: "migration2313"
-          migrationDescription: "IAT-2313: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
+          migrationDescription: "Migration2313: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
           migrateBranches: true
 
 
