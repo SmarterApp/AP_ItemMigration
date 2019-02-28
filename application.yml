@@ -267,11 +267,16 @@ migration:
 #        - migrationName: "migration2807"
 #          migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
 #          migrateBranches: false
-    - migrationSetKey: "iat-31.31"
-      migrationDefinitions:
-        - migrationName: "migration2313"
-          migrationDescription: "Migration2313: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
-          migrateBranches: true
+#    - migrationSetKey: "iat-31.31"
+#      migrationDefinitions:
+#        - migrationName: "migration2313Htqs"
+#          migrationDescription: "migration2313Htqs: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.32"
+#      migrationDefinitions:
+#        - migrationName: "migration2313NonHtqs"
+#          migrationDescription: "Migration2313NonHtqs: Set Scoring.isManagedByIat and Scoring.machineScoringManagedByIat to true"
+#          migrateBranches: true
 
 
 ##########################################################################################################
