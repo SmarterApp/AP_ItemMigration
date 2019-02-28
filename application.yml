@@ -62,7 +62,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 174654
+#  - 67863
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -282,15 +282,10 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2729"
 #          migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
-#    - migrationSetKey: "iat-34.2"
-#      migrationDefinitions:
-#        - migrationName: "migration2567"
-#          migrationDescription: "Migration2567: Import cleanup: MC and MS Options get misaligned if previewing with translations enabled"
-#          migrateBranches: true
 #    - migrationSetKey: "iat-34.3"
+#      migrationDefinitions:
 #        - migrationName: "migration2708"
 #          migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
-#      migrationDefinitions:
 #          migrateBranches: true
 #    - migrationSetKey: "iat-34.4"
 #      migrationDefinitions:
