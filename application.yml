@@ -339,6 +339,11 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2701"
 #          migrationDescription: "migration2701: The saved metadata value for Primary Emphasis is incorrect (n/a should be NA)"
+#    - migrationSetKey: "iat-34.13"
+#      migrationDefinitions:
+#        - migrationName: "migration2560"
+#          migrationDescription: "migration2560: HTQS does not have a space between the prompt and the interactive text"
+
 ---
 spring:
   profiles: dev
