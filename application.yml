@@ -16,6 +16,7 @@ spring:
     username: "${DB_USER}"
     password: "${DB_PASSWORD}"
     validationQuery: "SELECT 1"
+    max-active: 5
 
 itembank:
   host: "https://gitlab-dev.smarterbalanced.org"
@@ -62,7 +63,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 67863
+#  - 125900
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -338,11 +339,15 @@ migration:
 #    - migrationSetKey: "iat-34.12"
 #      migrationDefinitions:
 #        - migrationName: "migration2701"
-#          migrationDescription: "migration2701: The saved metadata value for Primary Emphasis is incorrect (n/a should be NA)"
+#          migrationDescription: "IAT-2701: The saved metadata value for Primary Emphasis is incorrect (n/a should be NA)"
 #    - migrationSetKey: "iat-34.13"
 #      migrationDefinitions:
 #        - migrationName: "migration2560"
-#          migrationDescription: "migration2560: HTQS does not have a space between the prompt and the interactive text"
+#          migrationDescription: "IAT-2560: HTQS does not have a space between the prompt and the interactive text"
+#    - migrationSetKey: "iat-34.14"
+#      migrationDefinitions:
+#        - migrationName: "migration2863"
+#          migrationDescription: "IAT-2863: Import Cleanup: Some prompt text is missing spacing "
 
 ---
 spring:
