@@ -267,7 +267,18 @@ migration:
 #        - migrationName: "migration2807"
 #          migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
 #          migrateBranches: false
-#
+#    - migrationSetKey: "iat-31.31"
+#      migrationDefinitions:
+#        - migrationName: "migration2313Htqs"
+#          migrationDescription: "migration2313Htqs: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
+#          migrateBranches: true
+#    - migrationSetKey: "iat-31.32"
+#      migrationDefinitions:
+#        - migrationName: "migration2313NonHtqs"
+#          migrationDescription: "Migration2313NonHtqs: Set Scoring.isManagedByIat and Scoring.machineScoringManagedByIat to true"
+#          migrateBranches: true
+
+
 ##########################################################################################################
 #
 # Everything below is in preparation for the upcoming production release 3/9/2019.  Feel free to change
@@ -328,6 +339,11 @@ migration:
 #      migrationDefinitions:
 #        - migrationName: "migration2701"
 #          migrationDescription: "migration2701: The saved metadata value for Primary Emphasis is incorrect (n/a should be NA)"
+#    - migrationSetKey: "iat-34.13"
+#      migrationDefinitions:
+#        - migrationName: "migration2560"
+#          migrationDescription: "migration2560: HTQS does not have a space between the prompt and the interactive text"
+
 ---
 spring:
   profiles: dev
