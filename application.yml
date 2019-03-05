@@ -279,7 +279,6 @@ migration:
 #          migrationDescription: "Migration2313NonHtqs: Set Scoring.isManagedByIat and Scoring.machineScoringManagedByIat to true"
 #          migrateBranches: true
 
-
 ##########################################################################################################
 #
 # Everything below is in preparation for the upcoming production release 3/9/2019.  Feel free to change
