@@ -200,6 +200,8 @@ migration:
             migrateBranches: true
           - migrationName: "migration2777"
             migrationDescription: "IAT-2777: Validation: Error regarding empty stimulus values generated against items with linked stim"
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2362: Validation: Attachment error generated despite no attachments existing on item"
 ---
 spring:
   profiles: dev
