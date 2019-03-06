@@ -202,6 +202,11 @@ migration:
             migrationDescription: "IAT-2777: Validation: Error regarding empty stimulus values generated against items with linked stim"
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2362: Validation: Attachment error generated despite no attachments existing on item"
+      - migrationSetKey: "iat-35"
+        migrationDefinitions:
+          - migrationName: "migration2483"
+            migrationDescription: "Migration2483: Some imported items don't show table cell borders when previewed"
+            migrateBranches: true
 ---
 spring:
   profiles: dev
