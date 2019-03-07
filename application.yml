@@ -242,6 +242,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2808: SecurityStatus metadata value should be hard-coded to secure"
             onlySyncToGitlab: true
+          - migrationName: "migration2778"
+            migrationDescription: "IAT-2778: Validation: Rubric error generated against MI and GI items"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
