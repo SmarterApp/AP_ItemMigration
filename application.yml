@@ -185,6 +185,7 @@ migration:
             migrateBranches: true
           - migrationName: "migration2560"
             migrationDescription: "IAT-2560: HTQS does not have a space between the prompt and the interactive text"
+            onlySyncToGitlab: true
           - migrationName: "migration2863"
             migrationDescription: "IAT-2863: Import Cleanup: Some prompt text is missing spacing"
           - migrationName: "migration2807"
