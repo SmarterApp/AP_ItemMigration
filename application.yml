@@ -245,6 +245,9 @@ migration:
           - migrationName: "migration2778"
             migrationDescription: "IAT-2778: Validation: Rubric error generated against MI and GI items"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2876: Status element missing in metadata.xml"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
