@@ -248,6 +248,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2876: Status element missing in metadata.xml"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2366: Image alt text error is generated against embedded MathML"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
