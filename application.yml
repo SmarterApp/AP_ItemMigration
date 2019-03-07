@@ -233,6 +233,9 @@ migration:
             migrationDescription: "Migration2483: Some imported items don't show table cell borders when previewed"
             migrateBranches: true
             requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2808: SecurityStatus metadata value should be hard-coded to secure"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
