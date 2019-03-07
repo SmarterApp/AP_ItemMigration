@@ -182,6 +182,7 @@ migration:
           - migrationName: "migration2708"
             migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
             migrateBranches: true
+            onlySyncToGitlab: true
           - migrationName: "migration1615"
             migrationDescription: "IAT-1615: Update image TTS html markup on rich text fields"
             migrateBranches: true
@@ -197,10 +198,13 @@ migration:
             requiresImportFiles: true
           - migrationName: "migration2815"
             migrationDescription: "IAT-2815: Validation: Both HTQ item types fail item type validation"
+            onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2364/IAT-2810: SAAIF files contain translation content for all items even when no translations are defined"
+            onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2662: Validation: Translated glossary errors are generated against terms with english only definitions"
+            onlySyncToGitlab: true
           - migrationName: "migration2701"
             migrationDescription: "migration2701: The saved metadata value for Primary Emphasis is incorrect (n/a should be NA)"
             migrateBranches: true
@@ -212,6 +216,7 @@ migration:
             requiresImportFiles: true
           - migrationName: "migration2807"
             migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
+            onlySyncToGitlab: true
           - migrationName: "migration2788"
             migrationDescription: "migration2788: Uploading ASL files lowercases their names breaking ASL."
             migrateBranches: true
@@ -222,13 +227,14 @@ migration:
           - migrationName: "migration2313NonHtqs"
             migrationDescription: "Migration2313NonHtqs: Set Scoring.isManagedByIat and Scoring.machineScoringManagedByIat to true"
             migrateBranches: true
-            requiresImportFiles: true
       - migrationSetKey: "iat-35"
         migrationDefinitions:
           - migrationName: "migration2777"
             migrationDescription: "IAT-2777: Validation: Error regarding empty stimulus values generated against items with linked stim"
+            onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2362: Validation: Attachment error generated despite no attachments existing on item"
+            onlySyncToGitlab: true
           - migrationName: "migration2483"
             migrationDescription: "Migration2483: Some imported items don't show table cell borders when previewed"
             migrateBranches: true
