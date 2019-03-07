@@ -63,8 +63,14 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 94351
 #  - 95548
+#  - 94351
+#  - 170554
+#  - 170489
+#  - 174384
+#  - 20279
+#  - 105594
+#  - 101872
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -78,6 +84,7 @@ migration:
         migrationDefinitions:
           - migrationName: "migration2576"
             migrationDescription: "Migration: Update imported item glossary values."
+            requiresImportFiles: true
           - migrationName: "migration2669"
             migrationDescription: "Migration2669: Update items' server managed values"
           - migrationName: "migration2698"
@@ -100,8 +107,10 @@ migration:
         migrationDefinitions:
           - migrationName: "migration2673"
             migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
+            requiresImportFiles: true
           - migrationName: "migration2641"
             migrationDescription: "IAT-2641: Prepend any Stimulus title field values to the existing prompt"
+            requiresImportFiles: true
             migrateBranches: true
           - migrationName: "migration2785"
             migrationDescription: "Migration2785: Set correct item version on imported items"
@@ -109,15 +118,18 @@ migration:
           - migrationName: "migration2619"
             migrationDescription: "Migration2619: Populate MC options on imported items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2624"
             migrationDescription: "Migration2624: Table was stripped out of item prompt during import"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2668"
             migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
             migrateBranches: true
           - migrationName: "migration2657"
             migrationDescription: "IAT-2657: IAT-2790: Process audio references from anchor tags"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2571"
             migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
             migrateBranches: true
@@ -130,30 +142,38 @@ migration:
           - migrationName: "migration2670"
             migrationDescription: "Migration2670: Image TTS tags were lost during import"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2593"
             migrationDescription: "Migration2593: English text not removed from translations content in TI items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2750"
             migrationDescription: "Migration2750: QRX files were not imported to certain items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2642"
             migrationDescription: "Migration2642: Set TTS metadata values"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2655"
             migrationDescription: "Migration2655: Import cleanup: Glossary m4a audio files did not import properly"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2751"
             migrationDescription: "Migration2751: Import cleanup: Some attachments were not copied during import due to file extension capitalization"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2605"
             migrationDescription: "Migration2605: Import cleanup: Editing an imported glossary term that has rich text formatting applied loses link to glossary entry"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2792"
             migrationDescription: "Migration2792: Set Scoring engine to AutomaticWithKeys on imported MS and EBSR items"
             migrateBranches: true
           - migrationName: "migration2799"
             migrationDescription: "Migration2799: MI item(s) lost the correct answers during import"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2660"
             migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
             migrateBranches: true
@@ -174,6 +194,7 @@ migration:
           - migrationName: "migration2805"
             migrationDescription: "Migration2805: Set correct item prompt on imported EBSR items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2815"
             migrationDescription: "IAT-2815: Validation: Both HTQ item types fail item type validation"
           - migrationName: "migrationGenerateSaaif"
@@ -185,8 +206,10 @@ migration:
             migrateBranches: true
           - migrationName: "migration2560"
             migrationDescription: "IAT-2560: HTQS does not have a space between the prompt and the interactive text"
+            onlySyncToGitlab: true
           - migrationName: "migration2863"
             migrationDescription: "IAT-2863: Import Cleanup: Some prompt text is missing spacing"
+            requiresImportFiles: true
           - migrationName: "migration2807"
             migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
           - migrationName: "migration2788"
@@ -195,9 +218,11 @@ migration:
           - migrationName: "migration2313Htqs"
             migrationDescription: "migration2313Htqs: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2313NonHtqs"
             migrationDescription: "Migration2313NonHtqs: Set Scoring.isManagedByIat and Scoring.machineScoringManagedByIat to true"
             migrateBranches: true
+            requiresImportFiles: true
       - migrationSetKey: "iat-35"
         migrationDefinitions:
           - migrationName: "migration2777"
@@ -207,6 +232,7 @@ migration:
           - migrationName: "migration2483"
             migrationDescription: "Migration2483: Some imported items don't show table cell borders when previewed"
             migrateBranches: true
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
