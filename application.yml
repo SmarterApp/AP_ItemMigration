@@ -246,10 +246,16 @@ migration:
             migrationDescription: "IAT-2778: Validation: Rubric error generated against MI and GI items"
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2366: Image alt text error is generated against embedded MathML"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2876: Status element missing in metadata.xml"
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2366: Image alt text error is generated against embedded MathML"
+            migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
+            onlySyncToGitlab: true
+          - migrationName: "migration2816"
+            migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
             onlySyncToGitlab: true
 ---
 spring:
