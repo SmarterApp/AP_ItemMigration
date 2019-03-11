@@ -63,23 +63,23 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#  - 95548
-#  - 94351
-#  - 170554
-#  - 170489
-#  - 174384
-#  - 20279
-#  - 105594
-#  - 101872
+#    - 95548
+#    - 94351
+#    - 170554
+#    - 170489
+#    - 174384
+#    - 20279
+#    - 105594
+#    - 101872
   data-store-migrations:
     enabled: true
     migrationSets:
-#    - migrationSetKey: "iat-30"
-#      migrationDefinitions:
-#      - migrationName: "migration2225"
-#        migrationDescription: "Migration: Rename ASL files to have STEM at the end."
-#      - migrationName: "migration2119"
-#        migrationDescription: "Migration: Map WER rubric from plain text to rich text."
+#      - migrationSetKey: "iat-30"
+#        migrationDefinitions:
+#        - migrationName: "migration2225"
+#          migrationDescription: "Migration: Rename ASL files to have STEM at the end."
+#        - migrationName: "migration2119"
+#          migrationDescription: "Migration: Map WER rubric from plain text to rich text."
       - migrationSetKey: "iat-31"
         migrationDefinitions:
           - migrationName: "migration2576"
@@ -256,7 +256,11 @@ migration:
             onlySyncToGitlab: true
           - migrationName: "migration2816"
             migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
+            requiresImportFiles: true
+          - migrationName: "migration2391"
+            migrationDescription: "IAT-2391: Spaces are not trimmed from Stimulus associated IDs, causing preview failures"
             onlySyncToGitlab: true
+
 ---
 spring:
   profiles: dev
