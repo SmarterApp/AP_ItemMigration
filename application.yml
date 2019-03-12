@@ -260,6 +260,9 @@ migration:
           - migrationName: "migration2391"
             migrationDescription: "IAT-2391: Spaces are not trimmed from Stimulus associated IDs, causing preview failures"
             onlySyncToGitlab: true
+          - migrationName: "migration2877"
+            migrationDescription: "IAT-2877: Subject missing for tutorials"
+            onlySyncToGitlab: true
 
 ---
 spring:
