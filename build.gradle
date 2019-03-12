@@ -59,7 +59,6 @@ sourceSets.main.groovy.srcDirs += ["src/main/java"]
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url "https://repo.spring.io/milestone" }
     maven { url "https://airdev.jfrog.io/airdev/libs-releases/" }
     maven { url "https://airdev.jfrog.io/airdev/libs-snapshots/" }
 }
