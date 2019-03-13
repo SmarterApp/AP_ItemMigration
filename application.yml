@@ -278,7 +278,15 @@ migration:
 #          - migrationName: "migration2877"
 #            migrationDescription: "IAT-2877: Subject missing for tutorials"
 #            onlySyncToGitlab: true
-
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2903: Change Claim2Category metadata.xml values to match SAAIF expectations"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2904: Claim2SubCategory metadata field should be renamed and save SAAIF expected values"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2905: Stop writing out braille, asl, CC elements to metadata.xml that are not SAAIF compliant"
+#            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
