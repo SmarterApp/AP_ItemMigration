@@ -65,13 +65,14 @@ migration:
   includedItems:
 #    - 94351
 #    - 95548
-    - 96000
+#    - 96000
 #    - 170554
 #    - 170489
 #    - 174384
 #    - 20279
 #    - 105594
-#    - 101872
+#    - 47750
+    - 18664
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -267,17 +268,17 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
 #            onlySyncToGitlab: true
-#      - migrationSetKey: "iat-36"
-#        migrationDefinitions:
-#          - migrationName: "migration2816"
-#            migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
-#            requiresImportFiles: true
-#          - migrationName: "migration2391"
-#            migrationDescription: "IAT-2391: Spaces are not trimmed from Stimulus associated IDs, causing preview failures"
-#            onlySyncToGitlab: true
-#          - migrationName: "migration2877"
-#            migrationDescription: "IAT-2877: Subject missing for tutorials"
-#            onlySyncToGitlab: true
+      - migrationSetKey: "iat-36"
+        migrationDefinitions:
+          - migrationName: "migration2816"
+            migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
+            requiresImportFiles: true
+          - migrationName: "migration2391"
+            migrationDescription: "IAT-2391: Spaces are not trimmed from Stimulus associated IDs, causing preview failures"
+            onlySyncToGitlab: true
+          - migrationName: "migration2877"
+            migrationDescription: "IAT-2877: Subject missing for tutorials"
+            onlySyncToGitlab: true
 
 ---
 spring:
