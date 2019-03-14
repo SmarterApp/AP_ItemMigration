@@ -268,18 +268,26 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
 #            onlySyncToGitlab: true
-      - migrationSetKey: "iat-36"
-        migrationDefinitions:
-          - migrationName: "migration2816"
-            migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
-            requiresImportFiles: true
-          - migrationName: "migration2391"
-            migrationDescription: "IAT-2391: Spaces are not trimmed from Stimulus associated IDs, causing preview failures"
-            onlySyncToGitlab: true
-          - migrationName: "migration2877"
-            migrationDescription: "IAT-2877: Subject missing for tutorials"
-            onlySyncToGitlab: true
-
+#      - migrationSetKey: "iat-36"
+#        migrationDefinitions:
+#          - migrationName: "migration2816"
+#            migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
+#            requiresImportFiles: true
+#          - migrationName: "migration2391"
+#            migrationDescription: "IAT-2391: Spaces are not trimmed from Stimulus associated IDs, causing preview failures"
+#            onlySyncToGitlab: true
+#          - migrationName: "migration2877"
+#            migrationDescription: "IAT-2877: Subject missing for tutorials"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2903: Change Claim2Category metadata.xml values to match SAAIF expectations"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2904: Claim2SubCategory metadata field should be renamed and save SAAIF expected values"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2905: Stop writing out braille, asl, CC elements to metadata.xml that are not SAAIF compliant"
+#            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
