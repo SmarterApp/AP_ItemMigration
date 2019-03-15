@@ -287,6 +287,9 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2905: Stop writing out braille, asl, CC elements to metadata.xml that are not SAAIF compliant"
 #            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2824: Change braille subtype values to be written in all uppercase"
+#            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
