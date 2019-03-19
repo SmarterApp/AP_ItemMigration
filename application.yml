@@ -291,6 +291,25 @@ migration:
 #          - migrationName: "migration2274NonImported"
 #            migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
 #            migrateBranches: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2848: Write AccessibilityTagsASLLanguage field to metadata.xml"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2856: AssociatedWordlist metadata field is not written when a glossary exists"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2855: AssociatedTutorial metadata field is not written"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2845: itm_item_id attribute value should populate imported items with the itsID, otherwise leave it blank"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2844: stim_pass_id attribute value should populate imported items with the itsID, otherwise leave it blank"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2854: EnemyItem value is not being written to metadata.xml"
+#            onlySyncToGitlab: true
+
 
 ---
 spring:
