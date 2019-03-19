@@ -63,7 +63,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#    - 125604
+#    - 151
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -285,6 +285,12 @@ migration:
 #          - migrationName: "migration2916"
 #            migrationDescription: "IAT-2916: Import Cleanup: Some tables did not import properly"
 #            requiresImportFiles: true
+#          - migrationName: "migration2274Imported"
+#            migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
+#            requiresImportFiles: true
+#          - migrationName: "migration2274NonImported"
+#            migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
+#            migrateBranches: true
 
 ---
 spring:
