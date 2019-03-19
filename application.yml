@@ -291,6 +291,9 @@ migration:
 #          - migrationName: "migration2274NonImported"
 #            migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
 #            migrateBranches: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2848: Write AccessibilityTagsASLLanguage field to metadata.xml"
+#            onlySyncToGitlab: true
 
 ---
 spring:
