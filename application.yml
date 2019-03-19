@@ -294,6 +294,12 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2848: Write AccessibilityTagsASLLanguage field to metadata.xml"
 #            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2856: AssociatedWordlist metadata field is not written when a glossary exists"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2855: AssociatedTutorial metadata field is not written"
+#            onlySyncToGitlab: true
 
 ---
 spring:
