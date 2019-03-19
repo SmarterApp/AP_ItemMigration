@@ -300,6 +300,16 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2855: AssociatedTutorial metadata field is not written"
 #            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2845: itm_item_id attribute value should populate imported items with the itsID, otherwise leave it blank"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2844: stim_pass_id attribute value should populate imported items with the itsID, otherwise leave it blank"
+#            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2854: EnemyItem value is not being written to metadata.xml"
+#            onlySyncToGitlab: true
+
 
 ---
 spring:
