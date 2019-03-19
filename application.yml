@@ -63,15 +63,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#    - 94351
-#    - 95548
-    - 96000
-#    - 170554
-#    - 170489
-#    - 174384
-#    - 20279
-#    - 105594
-#    - 101872
+#    - 151
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -290,6 +282,16 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2824: Change braille subtype values to be written in all uppercase"
 #            onlySyncToGitlab: true
+#          - migrationName: "migration2916"
+#            migrationDescription: "IAT-2916: Import Cleanup: Some tables did not import properly"
+#            requiresImportFiles: true
+#          - migrationName: "migration2274Imported"
+#            migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
+#            requiresImportFiles: true
+#          - migrationName: "migration2274NonImported"
+#            migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
+#            migrateBranches: true
+
 ---
 spring:
   profiles: dev
