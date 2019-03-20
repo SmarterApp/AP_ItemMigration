@@ -309,6 +309,9 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2854: EnemyItem value is not being written to metadata.xml"
 #            onlySyncToGitlab: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2908: Modify how TIMS writes TTS values to item xml file"
+#            onlySyncToGitlab: true
 
 
 ---
