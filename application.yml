@@ -315,6 +315,9 @@ migration:
 #          - migrationName: "migration2849Import"
 #            migrationDescription: "IAT-2849: Imported items: Write StimulusFormat to metadata.xml for Stim items"
 #            requiresImportFiles: true
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2908: Modify how TIMS writes TTS values to item xml file"
+#            onlySyncToGitlab: true
 
 
 ---
