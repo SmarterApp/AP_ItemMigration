@@ -309,6 +309,12 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2854: EnemyItem value is not being written to metadata.xml"
 #            onlySyncToGitlab: true
+#          - migrationName: "migration2849NonImport"
+#            migrationDescription: "IAT-2849: Non-imported items: Write StimulusFormat to metadata.xml for Stim items"
+#            onlySyncToGitlab: true
+#          - migrationName: "migration2849Import"
+#            migrationDescription: "IAT-2849: Imported items: Write StimulusFormat to metadata.xml for Stim items"
+#            requiresImportFiles: true
 
 
 ---
