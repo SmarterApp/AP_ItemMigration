@@ -318,7 +318,9 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2908: Modify how TIMS writes TTS values to item xml file"
 #            onlySyncToGitlab: true
-
+#          - migrationName: "migrationGenerateSaaif"
+#            migrationDescription: "IAT-2819: Preserve alignment settings on embedded image resources"
+#            onlySyncToGitlab: true
 
 ---
 spring:
