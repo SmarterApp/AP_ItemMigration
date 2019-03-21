@@ -63,7 +63,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-#    - 151
+#    - 11263
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -321,6 +321,9 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2819: Preserve alignment settings on embedded image resources"
 #            onlySyncToGitlab: true
+#          - migrationName: "migration2834"
+#            migrationDescription: "IAT-2834: Import Cleanup: Spanish images for GI items are not included in the sample.zip"
+#            requiresImportFiles: true
 
 ---
 spring:
