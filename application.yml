@@ -184,7 +184,7 @@ migration:
       # comment those sets out and comment iat-35 in and run it.  iat-33.
 #      - migrationSetKey: "iat-35"
 #        migrationDefinitions:
-#          - migrationName: "migration2729"
+#          - migrationName: "migrationGitLabProjectRename"
 #            migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
 #          - migrationName: "migration2708"
 #            migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
