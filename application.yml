@@ -324,6 +324,12 @@ migration:
           - migrationName: "migration2834"
             migrationDescription: "IAT-2834: Import Cleanup: Spanish images for GI items are not included in the sample.zip"
             requiresImportFiles: true
+          - migrationName: "Migration2854NonImport"
+            migrationDescription: "IAT-2854: Non-imported items: Import Cleanup: EnemyItem value is was not imported"
+            onlySyncToGitlab: true
+          - migrationName: "Migration2854Import"
+            migrationDescription: "IAT-2854: Imported items: Import Cleanup: EnemyItem value is was not imported"
+            requiresImportFiles: true
 
 ---
 spring:
