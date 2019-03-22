@@ -321,6 +321,12 @@ migration:
 #          - migrationName: "migrationGenerateSaaif"
 #            migrationDescription: "IAT-2819: Preserve alignment settings on embedded image resources"
 #            onlySyncToGitlab: true
+#          - migrationName: "Migration2854NonImport"
+#            migrationDescription: "IAT-2854: Non-imported items: Import Cleanup: EnemyItem value is was not imported"
+#            onlySyncToGitlab: true
+#          - migrationName: "Migration2854Import"
+#            migrationDescription: "IAT-2854: Imported items: Import Cleanup: EnemyItem value is was not imported"
+#            requiresImportFiles: true
 
 ---
 spring:
