@@ -330,7 +330,9 @@ migration:
           - migrationName: "migration2854Import"
             migrationDescription: "IAT-2854: Imported items: Import Cleanup: EnemyItem value is was not imported"
             requiresImportFiles: true
-
+          - migrationName: "migration2921"
+            migrationDescription: "IAT-2921: Rich text (Bolding) formatting was lost during recent migrations"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
