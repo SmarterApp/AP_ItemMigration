@@ -330,6 +330,12 @@ migration:
           - migrationName: "migration2854Import"
             migrationDescription: "IAT-2854: Imported items: Import Cleanup: EnemyItem value is was not imported"
             requiresImportFiles: true
+          - migrationName: "migration2843"
+            migrationDescription: "IAT-2843: (TUT only) SAAIF item version should reflect metadata version"
+            requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2843: (resync) SAAIF item version should reflect metadata version"
+            onlySyncToGitlab: true
           - migrationName: "migration2921"
             migrationDescription: "IAT-2921: Rich text (Bolding) formatting was lost during recent migrations"
             requiresImportFiles: true
