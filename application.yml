@@ -339,6 +339,12 @@ migration:
           - migrationName: "migration2921"
             migrationDescription: "IAT-2921: Rich text (Bolding) formatting was lost during recent migrations"
             requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2925: Some SAAIF item xml files failed to migrate to the new naming convention"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2924: Validation: Rubric error generated against some imported HTQS items"
+            onlySyncToGitlab: true
           - migrationName: "migration2930"
             migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
             requiresImportFiles: true
