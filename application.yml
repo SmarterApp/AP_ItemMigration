@@ -345,7 +345,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2924: Validation: Rubric error generated against some imported HTQS items"
             onlySyncToGitlab: true
-
+          - migrationName: "migration2930"
+            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
