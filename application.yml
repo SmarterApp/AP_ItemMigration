@@ -363,6 +363,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2947: Modify PerformanceTask field name and value in metadata.xml"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2949: STIM: Remove unused elements from metadata.xml"
+            onlySyncToGitlab: true
 
 ---
 spring:
