@@ -63,7 +63,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-    - 173173
+    - 6171
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -259,7 +259,7 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
             onlySyncToGitlab: true
-      - migrationSetKey: "iat-36"
+      - migrationSetKey: "iat-37"
         migrationDefinitions:
           - migrationName: "migration2816"
             migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
@@ -347,6 +347,12 @@ migration:
             onlySyncToGitlab: true
           - migrationName: "migration2930"
             migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
+            requiresImportFiles: true
+          - migrationName: "migration2930"
+            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
+            requiresImportFiles: true
+          - migrationName: "migration2867"
+            migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
             requiresImportFiles: true
 ---
 spring:
