@@ -63,7 +63,7 @@ migration:
   publishReportEnabled: true
   syncFromGitlabEnabled: false
   includedItems:
-    - 173173
+    - 6171
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -259,7 +259,7 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
             onlySyncToGitlab: true
-      - migrationSetKey: "iat-36"
+      - migrationSetKey: "iat-37"
         migrationDefinitions:
           - migrationName: "migration2816"
             migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
@@ -324,13 +324,36 @@ migration:
           - migrationName: "migration2834"
             migrationDescription: "IAT-2834: Import Cleanup: Spanish images for GI items are not included in the sample.zip"
             requiresImportFiles: true
-          - migrationName: "Migration2854NonImport"
+          - migrationName: "migration2854NonImport"
             migrationDescription: "IAT-2854: Non-imported items: Import Cleanup: EnemyItem value is was not imported"
             onlySyncToGitlab: true
-          - migrationName: "Migration2854Import"
+          - migrationName: "migration2854Import"
             migrationDescription: "IAT-2854: Imported items: Import Cleanup: EnemyItem value is was not imported"
             requiresImportFiles: true
-
+          - migrationName: "migration2843"
+            migrationDescription: "IAT-2843: (TUT only) SAAIF item version should reflect metadata version"
+            requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2843: (resync) SAAIF item version should reflect metadata version"
+            onlySyncToGitlab: true
+          - migrationName: "migration2921"
+            migrationDescription: "IAT-2921: Rich text (Bolding) formatting was lost during recent migrations"
+            requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2925: Some SAAIF item xml files failed to migrate to the new naming convention"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2924: Validation: Rubric error generated against some imported HTQS items"
+            onlySyncToGitlab: true
+          - migrationName: "migration2930"
+            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
+            requiresImportFiles: true
+          - migrationName: "migration2930"
+            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
+            requiresImportFiles: true
+          - migrationName: "migration2867"
+            migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
