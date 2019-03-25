@@ -354,6 +354,16 @@ migration:
           - migrationName: "migration2867"
             migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
             requiresImportFiles: true
+          - migrationName: "migration2933"
+            migrationDescription: "IAT-2933: Some HTQS items had more than one new line added after the prompt"
+            requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2946: Modify the Allow Calculator values written to metadata.xml"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2947: Modify PerformanceTask field name and value in metadata.xml"
+            onlySyncToGitlab: true
+
 ---
 spring:
   profiles: dev
