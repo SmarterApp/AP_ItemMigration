@@ -357,6 +357,10 @@ migration:
           - migrationName: "migration2933"
             migrationDescription: "IAT-2933: Some HTQS items had more than one new line added after the prompt"
             requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2946: Modify the Allow Calculator values written to metadata.xml"
+            onlySyncToGitlab: true
+
 ---
 spring:
   profiles: dev
