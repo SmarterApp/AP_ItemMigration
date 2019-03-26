@@ -363,7 +363,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2947: Modify PerformanceTask field name and value in metadata.xml"
             onlySyncToGitlab: true
-
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2953: TTS does not work properly on text with rich text effects applied first"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
