@@ -366,7 +366,12 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2949: STIM: Remove unused elements from metadata.xml"
             onlySyncToGitlab: true
-
+          - migrationName: "migration2668"
+            migrationDescription: "IAT-2668: Imported items have duplicated images in English and Spanish options MC, MS"
+            requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2953: TTS does not work properly on text with rich text effects applied first"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
