@@ -363,6 +363,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2947: Modify PerformanceTask field name and value in metadata.xml"
             onlySyncToGitlab: true
+          - migrationName: "migration2668"
+            migrationDescription: "IAT-2668: Imported items have duplicated images in English and Spanish options MC, MS"
+            requiresImportFiles: true
 
 ---
 spring:
