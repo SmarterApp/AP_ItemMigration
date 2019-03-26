@@ -348,9 +348,6 @@ migration:
           - migrationName: "migration2930"
             migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
             requiresImportFiles: true
-          - migrationName: "migration2930"
-            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
-            requiresImportFiles: true
           - migrationName: "migration2867"
             migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
             requiresImportFiles: true
