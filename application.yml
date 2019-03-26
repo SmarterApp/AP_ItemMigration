@@ -372,6 +372,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2953: TTS does not work properly on text with rich text effects applied first"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2948: Update TIMS to dynamically populate metadata.xml based on item data"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
