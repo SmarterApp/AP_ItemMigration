@@ -62,8 +62,15 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   syncFromGitlabEnabled: false
+  copySourceToTargetEnabled: false
+  deleteItemsEnabled: false
+  sourceBank:
+    token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
+    host: "https://itembank.smarterbalanced.org/api/v4"
+    group: "iat-prod"
+    bankKey: "200"
   includedItems:
-    - 6171
+#    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -381,6 +388,16 @@ spring:
 
 itembank:
   group: "iat-development"
+
+---
+spring:
+  profiles: uat
+  datasource:
+    url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    max-active: 2
+
+itembank:
+  group: "iat-uat"
 
 ---
 spring:

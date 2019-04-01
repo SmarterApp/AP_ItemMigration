@@ -142,6 +142,72 @@ processResources {
 }
 
 /***************************
+ * run copy service
+ ***************************/
+
+task bootRunCopyQa(type: org.springframework.boot.gradle.run.BootRunTask) {
+    doFirst() {
+        main = project.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty "spring.profiles.active", "dev, items"
+        systemProperty "migration.copySourceToTargetEnabled", "true"
+    }
+}
+
+task bootRunCopyUat(type: org.springframework.boot.gradle.run.BootRunTask) {
+    doFirst() {
+        main = project.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty "spring.profiles.active", "uat, items"
+        systemProperty "migration.copySourceToTargetEnabled", "true"
+    }
+}
+
+task bootRunCopyProdMirror(type: org.springframework.boot.gradle.run.BootRunTask) {
+    doFirst() {
+        main = project.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty "spring.profiles.active", "prod-mirror, items"
+        systemProperty "migration.copySourceToTargetEnabled", "true"
+
+    }
+}
+
+/***************************
+ * run delete service
+ ***************************/
+
+task bootRunDeleteQa(type: org.springframework.boot.gradle.run.BootRunTask) {
+    doFirst() {
+        main = project.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty "spring.profiles.active", "dev, items"
+        systemProperty "migration.copySourceToTargetEnabled", "false"
+        systemProperty "migration.deleteItemsEnabled", "true"
+    }
+}
+
+task bootRunDeleteUat(type: org.springframework.boot.gradle.run.BootRunTask) {
+    doFirst() {
+        main = project.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty "spring.profiles.active", "uat, items"
+        systemProperty "migration.copySourceToTargetEnabled", "false"
+        systemProperty "migration.deleteItemsEnabled", "true"
+    }
+}
+
+task bootRunDeleteProdMirror(type: org.springframework.boot.gradle.run.BootRunTask) {
+    doFirst() {
+        main = project.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty "spring.profiles.active", "prod-mirror, items"
+        systemProperty "migration.copySourceToTargetEnabled", "false"
+        systemProperty "migration.deleteItemsEnabled", "true"
+    }
+}
+
+/***************************
  * publishing
  ***************************/
 
@@ -173,36 +239,6 @@ artifactory {
             publications('mavenJava')
         }
     }
-}
-
-/***************************
- * kubernetes (k8s)
- ***************************/
-
-task k8sCopyFiles(type: Copy) {
-
-    from('src/main/kubernetes/') {
-        filter(ReplaceTokens, tokens: [version          : project.version,
-                                       dockerTagBase    : project.dockerTagBase,
-                                       kubecfgState     : project.kubecfgState,
-                                       kubecfgName      : project.kubecfgName,
-                                       kubecfgDeployment: project.kubecfgDeployment])
-    }
-
-    into 'build/kubernetes'
-}
-
-task k8sCopyFilesUat(type: Copy) {
-
-    from('src/main/kubernetes/') {
-        filter(ReplaceTokens, tokens: [version          : project.version,
-                                       dockerTagBase    : project.dockerTagBase,
-                                       kubecfgState     : project.kubecfgState,
-                                       kubecfgName      : project.kubecfgNameUat,
-                                       kubecfgDeployment: project.kubecfgDeployment])
-    }
-
-    into 'build/kubernetes'
 }
 
 /***************************
