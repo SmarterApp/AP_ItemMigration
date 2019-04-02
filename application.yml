@@ -372,6 +372,11 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2948: Update TIMS to dynamically populate metadata.xml based on item data"
             onlySyncToGitlab: true
+      - migrationSetKey: "iat-37.1"
+        migrationDefinitions:
+          - migrationName: "migration2867"
+            migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
