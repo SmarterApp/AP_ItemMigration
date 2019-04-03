@@ -377,6 +377,12 @@ migration:
           - migrationName: "migration2867"
             migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
             requiresImportFiles: true
+      # production hotfix iat-36.1
+      - migrationSetKey: "iat-38"
+        migrationDefinitions:
+          - migrationName: "migration2965"
+            migrationDescription: "IAT-2965:  Imported TI items are failing to convert to SAAIF"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
