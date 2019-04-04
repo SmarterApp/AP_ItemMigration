@@ -409,7 +409,7 @@ spring:
 
 migration:
   includedItems:
-    - 174401
+#    - 174401
   data-store-migrations:
     migrationSets:
       - migrationSetKey: "iat-33.1"
@@ -678,5 +678,14 @@ migration:
           - migrationName: "migration2668"
             migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
             requiresImportFiles: true
-
-
+      # After 3/28 deployment
+      - migrationSetKey: "iat-37"
+        migrationDefinitions:
+          - migrationName: "migration2965"
+            migrationDescription: "IAT-2965: Imported TI items are failing to convert to SAAIF"
+          - migrationName: "migration2867"
+            migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
+            requiresImportFiles: true
+          - migrationName: "migration2668"
+            migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
+            requiresImportFiles: true
