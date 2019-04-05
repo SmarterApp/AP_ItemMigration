@@ -379,6 +379,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2948: Update TIMS to dynamically populate metadata.xml based on item data"
             onlySyncToGitlab: true
+          - migrationName: "migration2839"
+            migrationDescription: "IAT-2839: Add human readable rubric for simple machine-scored items MI, HTQO, MS, MC, EBSR"
+            migrateBranches: true
 ---
 spring:
   profiles: dev
