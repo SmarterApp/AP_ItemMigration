@@ -266,6 +266,8 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
             onlySyncToGitlab: true
+      - migrationSetKey: "iat-36"
+        ignoreSet: true
       - migrationSetKey: "iat-37"
         migrationDefinitions:
           - migrationName: "migration2816"
@@ -379,6 +381,15 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2948: Update TIMS to dynamically populate metadata.xml based on item data"
             onlySyncToGitlab: true
+          - migrationName: "migration2839"
+            migrationDescription: "IAT-2839: Add human readable rubric for simple machine-scored items MI, HTQO, MS, MC, EBSR"
+            migrateBranches: true
+          - migrationName: "migration2867"
+            migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
+            requiresImportFiles: true
+          - migrationName: "migration2965"
+            migrationDescription: "IAT-2965:  Imported TI items are failing to convert to SAAIF"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
