@@ -62,8 +62,15 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   syncFromGitlabEnabled: false
+  copySourceToTargetEnabled: false
+  deleteItemsEnabled: false
+  sourceBank:
+    token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
+    host: "https://itembank.smarterbalanced.org/api/v4"
+    group: "iat-prod"
+    bankKey: "200"
   includedItems:
-#    - 170127
+#    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -374,6 +381,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2948: Update TIMS to dynamically populate metadata.xml based on item data"
             onlySyncToGitlab: true
+          - migrationName: "migration2839"
+            migrationDescription: "IAT-2839: Add human readable rubric for simple machine-scored items MI, HTQO, MS, MC, EBSR"
+            migrateBranches: true
           - migrationName: "migration2867"
             migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
             requiresImportFiles: true
@@ -389,6 +399,16 @@ spring:
 
 itembank:
   group: "iat-development"
+
+---
+spring:
+  profiles: uat
+  datasource:
+    url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    max-active: 2
+
+itembank:
+  group: "iat-uat"
 
 ---
 spring:
