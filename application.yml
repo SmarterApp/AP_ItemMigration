@@ -390,6 +390,14 @@ migration:
           - migrationName: "migration2965"
             migrationDescription: "IAT-2965:  Imported TI items are failing to convert to SAAIF"
             requiresImportFiles: true
+      - migrationSetKey: "iat-38"
+        migrationDefinitions:
+          - migrationName: "migration2886Imported"
+            migrationDescription: "IAT-2886: Limit allowed answers for MS items (Imported items)"
+            requiresImportFiles: true
+          - migrationName: "migration2886NonImported"
+            migrationDescription: "IAT-2886: Limit allowed answers for MS items (Non-imported items)"
+            migrateBranches: true
 ---
 spring:
   profiles: dev
