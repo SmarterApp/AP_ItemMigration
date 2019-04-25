@@ -70,7 +70,7 @@ migration:
     group: "iat-prod"
     bankKey: "200"
   includedItems:
-    - 83796
+    - 41730
   data-store-migrations:
     enabled: true
     migrationSets:
