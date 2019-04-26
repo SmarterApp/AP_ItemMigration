@@ -70,7 +70,8 @@ migration:
     group: "iat-prod"
     bankKey: "200"
   includedItems:
-    - 21153
+    - 126184
+    - 101255
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -268,7 +269,7 @@ migration:
 #            onlySyncToGitlab: true
 #      - migrationSetKey: "iat-36"
 #        ignoreSet: true
-      - migrationSetKey: "iat-37"
+      - migrationSetKey: "iat-37.3"
         migrationDefinitions:
 #          - migrationName: "migration2816"
 #            migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
