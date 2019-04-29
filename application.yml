@@ -396,6 +396,9 @@ migration:
           - migrationName: "migration2886NonImported"
             migrationDescription: "IAT-2886: Limit allowed answers for MS items (Non-imported items)"
             migrateBranches: true
+          - migrationName: "migration2957"
+            migrationDescription: "IAT-2957: Import TTS for Equation images"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
