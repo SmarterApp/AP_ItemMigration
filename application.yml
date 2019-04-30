@@ -399,6 +399,11 @@ migration:
           - migrationName: "migration2957"
             migrationDescription: "IAT-2957: Import TTS for Equation images"
             requiresImportFiles: true
+      - migrationSetKey: "iat-38"
+        migrationDefinitions:
+          - migrationName: "migration2929"
+            migrationDescription: "IAT-2929: After bulk glossary upload containing multiple Filipino and Punjabi defs for a single term, manual edits to that same term result in lost Filipino and Punjabi defs"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
