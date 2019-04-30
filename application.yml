@@ -404,6 +404,9 @@ migration:
           - migrationName: "migration2929"
             migrationDescription: "IAT-2929: After bulk glossary upload containing multiple Filipino and Punjabi defs for a single term, manual edits to that same term result in lost Filipino and Punjabi defs"
             requiresImportFiles: true
+          - migrationName: "migration3025"
+            migrationDescription: "IAT-3025: Show EQ, GI, and TI rubric on scoring tab for imported items"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
