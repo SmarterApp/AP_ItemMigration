@@ -411,6 +411,9 @@ migration:
         migrationDefinitions:
           - migrationName: "migration2894"
             migrationDescription: "IAT-2894: 4.6.1 Write EQ spec defining how all right & left label features should be written to SAAIF files"
+          - migrationName: "migration3026"
+            migrationDescription: "IAT-3026: EBSR stem element should not be present in SAAIF XML file"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
