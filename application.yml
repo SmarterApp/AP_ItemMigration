@@ -407,6 +407,10 @@ migration:
           - migrationName: "migration3025"
             migrationDescription: "IAT-3025: Show EQ, GI, and TI rubric on scoring tab for imported items"
             requiresImportFiles: true
+      - migrationSetKey: "iat-39"
+        migrationDefinitions:
+          - migrationName: "migration2894"
+            migrationDescription: "IAT-2894: 4.6.1 Write EQ spec defining how all right & left label features should be written to SAAIF files"
 ---
 spring:
   profiles: dev
