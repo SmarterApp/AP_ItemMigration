@@ -414,6 +414,12 @@ migration:
           - migrationName: "migration3026"
             migrationDescription: "IAT-3026: EBSR stem element should not be present in SAAIF XML file"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateStimuliSaaif"
+            migrationDescription: "IAT-2851: stm_pass_subject attribute value is not being written for Stimulus items"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateStimuliSaaif"
+            migrationDescription: "IAT-2853: stm_att_Stim Format attribute is not being written to Stimulus item xml files"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
