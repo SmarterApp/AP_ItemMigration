@@ -423,6 +423,9 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2846: Version number in item xml is missing minor version"
             onlySyncToGitlab: true
+          - migrationName: "migration2972"
+            migrationDescription: "IAT-2972: Update metadata.xml WritingPurpose field to use a new name and values"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
