@@ -407,6 +407,25 @@ migration:
           - migrationName: "migration3025"
             migrationDescription: "IAT-3025: Show EQ, GI, and TI rubric on scoring tab for imported items"
             requiresImportFiles: true
+      - migrationSetKey: "iat-39"
+        migrationDefinitions:
+          - migrationName: "migration2894"
+            migrationDescription: "IAT-2894: 4.6.1 Write EQ spec defining how all right & left label features should be written to SAAIF files"
+          - migrationName: "migration3026"
+            migrationDescription: "IAT-3026: EBSR stem element should not be present in SAAIF XML file"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateStimuliSaaif"
+            migrationDescription: "IAT-2851: stm_pass_subject attribute value is not being written for Stimulus items"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateStimuliSaaif"
+            migrationDescription: "IAT-2853: stm_att_Stim Format attribute is not being written to Stimulus item xml files"
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2846: Version number in item xml is missing minor version"
+            onlySyncToGitlab: true
+          - migrationName: "migration2972"
+            migrationDescription: "IAT-2972: Update metadata.xml WritingPurpose field to use a new name and values"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
