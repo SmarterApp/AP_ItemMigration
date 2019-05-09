@@ -165,7 +165,7 @@ migration:
             requiresImportFiles: true
           - migrationName: "migration2668"
             migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names"
-            migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2792"
             migrationDescription: "Migration2792: Set Scoring engine to AutomaticWithKeys on imported MS and EBSR items"
             migrateBranches: true
