@@ -426,6 +426,9 @@ migration:
           - migrationName: "migration2972"
             migrationDescription: "IAT-2972: Update metadata.xml WritingPurpose field to use a new name and values"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3023: stim_pass_id required for items with associated stims"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
