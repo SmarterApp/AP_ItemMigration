@@ -429,6 +429,12 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-3023: stim_pass_id required for items with associated stims"
             onlySyncToGitlab: true
+          - migrationName: "migrationNonImport3017"
+            migrationDescription: "IAT-3017: Import does not preserve the layout attribute for assessment items"
+            migrateBranches: true
+          - migrationName: "migrationImport3017"
+            migrationDescription: "IAT-3017: Import does not preserve the layout attribute for assessment items"
+            requiresImportFiles: true
 ---
 spring:
   profiles: dev
