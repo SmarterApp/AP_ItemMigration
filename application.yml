@@ -435,6 +435,12 @@ migration:
           - migrationName: "migrationImport3017"
             migrationDescription: "IAT-3017: Import does not preserve the layout attribute for assessment items"
             requiresImportFiles: true
+          - migrationName: "migrationImport2887"
+            migrationDescription: "IAT-2887: 4.1.2 Limit allowed answers for MS part of EBSR items"
+            requiresImportFiles: true
+          - migrationName: "migrationNonImport2887"
+            migrationDescription: "IAT-2887: 4.1.2 Limit allowed answers for MS part of EBSR items"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
