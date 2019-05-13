@@ -441,6 +441,9 @@ migration:
           - migrationName: "migrationNonImport2887"
             migrationDescription: "IAT-2887: 4.1.2 Limit allowed answers for MS part of EBSR items"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3034: Modify how TIMS writes Equation TTS values to the item xml file"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
