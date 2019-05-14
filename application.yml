@@ -453,6 +453,9 @@ migration:
           - migrationName: "migrationNonImport2888"
             migrationDescription: "IAT-2888: 4.1.3 Limit allowed answers for MI items"
             onlySyncToGitlab: true
+          - migrationName: "migration3044"
+            migrationDescription: "IAT-3044: Use Enhanced ID to produce Legacy StandardPublication"
+            migrateBranches: true
 ---
 spring:
   profiles: dev
