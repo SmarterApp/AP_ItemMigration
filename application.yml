@@ -447,6 +447,12 @@ migration:
           - migrationName: "migration2944"
             migrationDescription: "IAT-2944: Bulk glossary upload ignores term numbering and is capable of creating dupe numbers "
             migrateBranches: true
+          - migrationName: "migrationImport2888"
+            migrationDescription: "IAT-2888: 4.1.3 Limit allowed answers for MI items"
+            requiresImportFiles: true
+          - migrationName: "migrationNonImport2888"
+            migrationDescription: "IAT-2888: 4.1.3 Limit allowed answers for MI items"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
