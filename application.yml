@@ -459,6 +459,9 @@ migration:
           - migrationName: "migrationGenerateSaaifMathOnly"
             migrationDescription: "IAT-3043: Update subject 'Math' in SAAIF XML Files"
             onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3045: Wordlists (WIT) require 'INTERACTION TYPE' in metadata.xml"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
