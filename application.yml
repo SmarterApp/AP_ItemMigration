@@ -456,6 +456,9 @@ migration:
           - migrationName: "migration3044"
             migrationDescription: "IAT-3044: Use Enhanced ID to produce Legacy StandardPublication"
             migrateBranches: true
+          - migrationName: "migrationGenerateSaaifMathOnly"
+            migrationDescription: "IAT-3043: Update subject 'Math' in SAAIF XML Files"
+            onlySyncToGitlab: true
 ---
 spring:
   profiles: dev
