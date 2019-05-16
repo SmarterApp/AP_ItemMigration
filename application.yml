@@ -440,7 +440,6 @@ migration:
             requiresImportFiles: true
           - migrationName: "migrationNonImport2887"
             migrationDescription: "IAT-2887: 4.1.2 Limit allowed answers for MS part of EBSR items"
-            onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-3034: Modify how TIMS writes Equation TTS values to the item xml file"
             onlySyncToGitlab: true
@@ -452,7 +451,6 @@ migration:
             requiresImportFiles: true
           - migrationName: "migrationNonImport2888"
             migrationDescription: "IAT-2888: 4.1.3 Limit allowed answers for MI items"
-            onlySyncToGitlab: true
           - migrationName: "migration3044"
             migrationDescription: "IAT-3044: Use Enhanced ID to produce Legacy StandardPublication"
             migrateBranches: true
@@ -462,6 +460,11 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-3045: Wordlists (WIT) require 'INTERACTION TYPE' in metadata.xml"
             onlySyncToGitlab: true
+          - migrationName: "migrationImport2889"
+            migrationDescription: "IAT-2889: 4.1.4 Limit allowed answers for HTQS items"
+            requiresImportFiles: true
+          - migrationName: "migrationNonImport2889"
+            migrationDescription: "IAT-2889: 4.1.4 Limit allowed answers for HTQS items"
 ---
 spring:
   profiles: dev
