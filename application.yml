@@ -465,6 +465,13 @@ migration:
             requiresImportFiles: true
           - migrationName: "migrationNonImport2889"
             migrationDescription: "IAT-2889: 4.1.4 Limit allowed answers for HTQS items"
+          - migrationName: "migration2360"
+            migrationDescription: "IAT-2360: Update invalid Scoring Engine metadata values"
+            migrateBranches: true
+          - migrationName: "migrationGenerateSaaifGiType"
+            migrationDescription: "IAT-3037: Invalid gax reference value"
+            onlySyncToGitlab: true
+
 ---
 spring:
   profiles: dev
