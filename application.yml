@@ -471,7 +471,7 @@ migration:
           - migrationName: "migrationGenerateSaaifGiType"
             migrationDescription: "IAT-3037: Invalid gax reference value"
             onlySyncToGitlab: true
-          - migrationName: "Migration2978"
+          - migrationName: "migration2978"
             migrationDescription: "IAT-2978: Generate MathML xml files along side MathML images"
             migrateBranches: true
             requiresImportFiles: true
