@@ -70,7 +70,6 @@ migration:
     group: "iat-prod"
     bankKey: "200"
   includedItems:
-#    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -399,7 +398,7 @@ migration:
           - migrationName: "migration2957"
             migrationDescription: "IAT-2957: Import TTS for Equation images"
             requiresImportFiles: true
-      - migrationSetKey: "iat-38"
+      - migrationSetKey: "iat-38.1"
         migrationDefinitions:
           - migrationName: "migration2929"
             migrationDescription: "IAT-2929: After bulk glossary upload containing multiple Filipino and Punjabi defs for a single term, manual edits to that same term result in lost Filipino and Punjabi defs"
@@ -407,6 +406,9 @@ migration:
           - migrationName: "migration3025"
             migrationDescription: "IAT-3025: Show EQ, GI, and TI rubric on scoring tab for imported items"
             requiresImportFiles: true
+#      items from production on 5/7
+      - migrationSetKey: "iat-38"
+        ignoreSet: true
       - migrationSetKey: "iat-39"
         migrationDefinitions:
           - migrationName: "migration2894"
@@ -471,10 +473,17 @@ migration:
           - migrationName: "migrationGenerateSaaifGiType"
             migrationDescription: "IAT-3037: Invalid gax reference value"
             onlySyncToGitlab: true
-          - migrationName: "Migration2978"
+          - migrationName: "migration2978"
             migrationDescription: "IAT-2978: Generate MathML xml files along side MathML images"
             migrateBranches: true
             requiresImportFiles: true
+          - migrationName: "migrationImport3065"
+            migrationDescription: "IAT-3065: Machine scoring section is missing on some imported and migrated items"
+            requiresImportFiles: true
+          - migrationName: "migration3065"
+            migrationDescription: "IAT-3065: Machine scoring section is missing on some imported and migrated items"
+            migrateBranches: true
+
 
 ---
 spring:
