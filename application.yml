@@ -70,6 +70,7 @@ migration:
     group: "iat-prod"
     bankKey: "200"
   includedItems:
+#    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -475,6 +476,10 @@ migration:
             onlySyncToGitlab: true
           - migrationName: "migration2978"
             migrationDescription: "IAT-2978: Generate MathML xml files along side MathML images"
+            migrateBranches: true
+            requiresImportFiles: true
+          - migrationName: "migration3075"
+            migrationDescription: "IAT-3075: Import: machineScoringManagedByIat set to true by import process"
             migrateBranches: true
             requiresImportFiles: true
           - migrationName: "migrationImport3065"
