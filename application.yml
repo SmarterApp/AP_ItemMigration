@@ -488,7 +488,11 @@ migration:
           - migrationName: "migration3065"
             migrationDescription: "IAT-3065: Machine scoring section is missing on some imported and migrated items"
             migrateBranches: true
-
+      - migrationSetKey: "iat-40"
+        migrationDefinitions:
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3114 - Change Metadata field PTWritingType to PtWritingType"
+            onlySyncToGitlab: true
 
 ---
 spring:
