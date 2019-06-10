@@ -488,6 +488,14 @@ migration:
           - migrationName: "migration3065"
             migrationDescription: "IAT-3065: Machine scoring section is missing on some imported and migrated items"
             migrateBranches: true
+      # Phase 4 production migration number
+      - migrationSetKey: "iat-40"
+        ignoreSet: true
+      - migrationSetKey: "iat-41"
+        migrationDefinitions:
+          - migrationName: "migration3106"
+            migrationDescription: "IAT-3106: MI items matchMax needs to be captured during import migration"
+            requiresImportFiles: true
 
 
 ---
