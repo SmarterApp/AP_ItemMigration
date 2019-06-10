@@ -496,6 +496,8 @@ migration:
           - migrationName: "migration3106"
             migrationDescription: "IAT-3106: MI items matchMax needs to be captured during import migration"
             requiresImportFiles: true
+          - migrationName: "migration3114"
+            migrationDescription: "IAT-3114: Change metadata field PTWritingType to PtWritingType"
 
 
 ---
