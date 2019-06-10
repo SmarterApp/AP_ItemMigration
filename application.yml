@@ -491,7 +491,7 @@ migration:
       # Phase 4 production migration number
       - migrationSetKey: "iat-40"
         ignoreSet: true
-      - migrationSetKey: "iat-41"
+      - migrationSetKey: "iat-40.1"
         migrationDefinitions:
           - migrationName: "migration3106"
             migrationDescription: "IAT-3106: MI items matchMax needs to be captured during import migration"
