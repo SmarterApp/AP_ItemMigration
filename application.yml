@@ -498,7 +498,10 @@ migration:
             requiresImportFiles: true
           - migrationName: "migration3114"
             migrationDescription: "IAT-3114: Change metadata field PTWritingType to PtWritingType"
-
+          - migrationName: "migration3119"
+            migrationDescription: "IAT-3119: Replace rubric file with import.zip rubric file"
+            migrateBranches: true
+            requiresImportFiles: true
 
 ---
 spring:
