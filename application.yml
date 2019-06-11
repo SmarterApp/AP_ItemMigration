@@ -508,7 +508,7 @@ itembank:
 spring:
   profiles: uat
   datasource:
-    url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    url: "jdbc:postgresql://imrt-db-uat-aurora.cluster-cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
     max-active: 2
 
 itembank:
