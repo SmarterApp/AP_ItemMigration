@@ -488,7 +488,11 @@ migration:
           - migrationName: "migration3065"
             migrationDescription: "IAT-3065: Machine scoring section is missing on some imported and migrated items"
             migrateBranches: true
-
+      - migrationSetKey: "iat-40"
+        migrationDefinitions:
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3114 - Change Metadata field PTWritingType to PtWritingType"
+            onlySyncToGitlab: true
 
 ---
 spring:
@@ -504,7 +508,7 @@ itembank:
 spring:
   profiles: uat
   datasource:
-    url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    url: "jdbc:postgresql://imrt-db-uat-aurora.cluster-cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
     max-active: 2
 
 itembank:
