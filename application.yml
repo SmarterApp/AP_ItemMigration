@@ -502,6 +502,9 @@ migration:
             migrationDescription: "IAT-3119: Replace rubric file with import.zip rubric file"
             migrateBranches: true
             requiresImportFiles: true
+          - migrationName: "migration3120"
+            migrationDescription: "IAT-3120: TTS VI missing for some items"
+            requiresImportFiles: true
 
 ---
 spring:
