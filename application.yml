@@ -69,6 +69,8 @@ migration:
     host: "https://itembank.smarterbalanced.org/api/v4"
     group: "iat-prod"
     bankKey: "200"
+  imrt:
+    syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
 #    - 123793
   data-store-migrations:
@@ -515,17 +517,22 @@ spring:
 
 itembank:
   group: "iat-development"
+migration:
+  imrt:
+    syncUrlPattern: "http://iis-awsqa.sbtds.org/sync/%s"
 
 ---
 spring:
   profiles: uat
   datasource:
-    url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+    url: "jdbc:postgresql://imrt-db-uat-aurora.cluster-cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
     max-active: 2
 
 itembank:
   group: "iat-uat"
-
+migration:
+  imrt:
+    syncUrlPattern: "http://iis-awsuat.sbtds.org/sync/%s"
 ---
 spring:
   profiles: prod-mirror
@@ -535,3 +542,7 @@ spring:
 
 itembank:
   group: "iat-prod-mirror"
+migration:
+  imrt:
+    syncUrlPattern: "http://iis-prod-mirror.sbtds.org/sync/%s"
+
