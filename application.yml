@@ -69,6 +69,8 @@ migration:
     host: "https://itembank.smarterbalanced.org/api/v4"
     group: "iat-prod"
     bankKey: "200"
+  imrt:
+    urlPattern: "http://localhost:9081/sync/%s"
   includedItems:
 #    - 123793
   data-store-migrations:
