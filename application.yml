@@ -70,7 +70,7 @@ migration:
     group: "iat-prod"
     bankKey: "200"
   imrt:
-    urlPattern: "http://localhost:9081/sync/%s"
+    syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
 #    - 123793
   data-store-migrations:
@@ -517,6 +517,9 @@ spring:
 
 itembank:
   group: "iat-development"
+migration:
+  imrt:
+    syncUrlPattern: "http://iis-awsqa.sbtds.org/sync/%s"
 
 ---
 spring:
@@ -527,7 +530,9 @@ spring:
 
 itembank:
   group: "iat-uat"
-
+migration:
+  imrt:
+    syncUrlPattern: "http://iis-awsuat.sbtds.org/sync/%s"
 ---
 spring:
   profiles: prod-mirror
@@ -537,3 +542,7 @@ spring:
 
 itembank:
   group: "iat-prod-mirror"
+migration:
+  imrt:
+    syncUrlPattern: "http://iis-prod-mirror.sbtds.org/sync/%s"
+
