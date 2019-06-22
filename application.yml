@@ -507,6 +507,12 @@ migration:
           - migrationName: "migration3120"
             migrationDescription: "IAT-3120: TTS VI missing for some items"
             requiresImportFiles: true
+      - migrationSetKey: "iat-41"
+        migrationDefinitions:
+          - migrationName: "migration3104"
+            migrationDescription: "IAT-3104 Items missing m4a glossary audio file image resource reference"
+            migrateBranches: true
+            requiresImportFiles: true
 
 ---
 spring:
