@@ -515,6 +515,7 @@ migration:
             requiresImportFiles: true
           - migrationName: "migration2204"
             migrationDescription: "IAT-2204: TI scoring QRX is generating variables incorrectly"
+            migrateBranches: false
 
 ---
 spring:
