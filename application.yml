@@ -73,7 +73,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-    - 123793
+#    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
