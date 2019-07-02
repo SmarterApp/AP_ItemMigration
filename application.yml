@@ -64,6 +64,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
+  validateMigrationSets: true
   sourceBank:
     token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
     host: "https://itembank.smarterbalanced.org/api/v4"
@@ -72,7 +73,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-#    - 123793
+    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
