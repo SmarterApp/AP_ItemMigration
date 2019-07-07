@@ -508,6 +508,8 @@ migration:
             migrationDescription: "IAT-3120: TTS VI missing for some items"
             requiresImportFiles: true
       - migrationSetKey: "iat-41"
+        ignoreSet: true
+      - migrationSetKey: "iat-41.1"
         migrationDefinitions:
           - migrationName: "migration3104"
             migrationDescription: "IAT-3104 Items missing m4a glossary audio file image resource reference"
