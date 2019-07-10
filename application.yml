@@ -47,6 +47,7 @@ itembank:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
     bucketName: "${itembank.group}"
+    versionedBucketName: "${itembank.group}-versioned"
     accessKey: "${IAT_AWS_ACCESS_KEY}"
     secretKey: "${IAT_AWS_ACCESS_SECRET}"
 
@@ -64,6 +65,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
+  validateMigrationSets: true
   sourceBank:
     token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
     host: "https://itembank.smarterbalanced.org/api/v4"
