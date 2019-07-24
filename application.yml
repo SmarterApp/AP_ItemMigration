@@ -62,8 +62,10 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   syncFromGitlabEnabled: false
-  copySourceToTargetEnabled: false
+  copySourceToTargetEnabled: true
   deleteItemsEnabled: false
+  itemFileLocation: "${TIMS_COPY_ITEM_FILE_LOCATION}"
+  syncWithImrt: false
   sourceBank:
     token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
     host: "https://itembank.smarterbalanced.org/api/v4"
