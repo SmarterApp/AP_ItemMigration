@@ -62,9 +62,9 @@ migration:
   numberOfThreads: 5
   publishReportEnabled: true
   syncFromGitlabEnabled: false
-  copySourceToTargetEnabled: true
+  copySourceToTargetEnabled: false
   deleteItemsEnabled: false
-  itemFileLocation: "${TIMS_COPY_ITEM_FILE_LOCATION}"
+  itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
     token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
@@ -74,7 +74,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-#    - 123793
+#    - 12511
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -523,6 +523,11 @@ migration:
           - migrationName: "migration3165"
             migrationDescription: "IAT-3165: EBSR TTS tagging not working"
             migrateBranches: false
+      - migrationSetKey: "iat-41.2"
+        migrationDefinitions:
+          - migrationName: "migration3104"
+            migrationDescription: "IAT-3205 - Items missing m4a glossary audio file image resource reference"
+            requiresImportFiles: true
 
 ---
 spring:
