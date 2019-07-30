@@ -74,7 +74,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-#    - 12511
+#    - 30989
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -528,6 +528,9 @@ migration:
           - migrationName: "migration3104"
             migrationDescription: "IAT-3205 - Items missing m4a glossary audio file image resource reference"
             requiresImportFiles: true
+          - migrationName: "migration3201"
+            migrationDescription: "IAT-3201 - TIMS writes nested P tags on MI items tables"
+            migrateBranches: true
 
 ---
 spring:
