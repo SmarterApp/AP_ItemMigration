@@ -65,6 +65,8 @@ migration:
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
   validateMigrationSets: true
+  itemFileLocation: ${tims.copy.item.file.location}
+  syncWithImrt: false
   sourceBank:
     token: "${GITLAB_SOURCE_BANK_ACCESS_TOKEN}"
     host: "https://itembank.smarterbalanced.org/api/v4"
@@ -522,6 +524,17 @@ migration:
           - migrationName: "migration3165"
             migrationDescription: "IAT-3165: EBSR TTS tagging not working"
             migrateBranches: false
+      - migrationSetKey: "iat-41.2"
+        migrationDefinitions:
+          - migrationName: "migration3104"
+            migrationDescription: "IAT-3205 - Items missing m4a glossary audio file image resource reference"
+            requiresImportFiles: true
+          - migrationName: "migration3201"
+            migrationDescription: "IAT-3201 - TIMS writes nested P tags on MI items tables"
+            migrateBranches: true
+          - migrationName: "migration3227"
+            migrationDescription: "IAT-3227 - Fix MI Human Readable Rubric Display"
+            migrateBranches: true
 
 ---
 spring:
