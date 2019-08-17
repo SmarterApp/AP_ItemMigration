@@ -16,37 +16,37 @@ spring:
     username: "${DB_USER}"
     password: "${DB_PASSWORD}"
     validationQuery: "SELECT 1"
-    max-active: 5
+    tomcat:
+      max-active: 5
 
 itembank:
+  systemVersion: "iat-31.1"
   host: "https://gitlab-dev.smarterbalanced.org"
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
   password: "${GITLAB_PASSWORD}"
   group: "${GITLAB_GROUP}"
-  # -------- START PRODUCTION ---------
-  #  host: ""
-  #  accessToken: ""
-  #  user: ""
-  #  password: ""
-  #  group: ""
-  # -------- END PRODUCTION ---------
   localBaseDir: "${HOME}/ItemBankMigration"
   apiVersion: "/api/v4"
-  bankKey: "200"
   # the system version does not do anything when running locally, the set key is what is used/saved on the entity
-  systemVersion: "iat-31.1"
   reportRepoName: "ItemBankReports"
   randomizeItemClone: true       #set true for migration; false for download
   resultsPerPageFindingAllItems: "250"
+  systemUser:
+    userName: "iat-item-migration@smarterbalanced.org"
+    fullName: "Item Migration"
   enabled:
     database: true
     broker: true
     producer: true
+  services:
+    history:
+      url: "http://localhost:8086"
   aws:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
-    bucketName: "${itembank.group}"
+    bucketName: "${GITLAB_GROUP}"
+    versionedBucketName: "${GITLAB_GROUP}-versioned"
     accessKey: "${IAT_AWS_ACCESS_KEY}"
     secretKey: "${IAT_AWS_ACCESS_SECRET}"
 
@@ -64,6 +64,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
+  validateMigrationSets: true
   itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
@@ -74,7 +75,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-#    - 30989
+#    - 123793
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -540,10 +541,14 @@ spring:
   profiles: dev
   datasource:
     url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
-    max-active: 2
+    tomcat:
+      max-active: 2
 
 itembank:
   group: "iat-development"
+  aws:
+    bucketName: "iat-development"
+    versionedBucketName: "iat-development-versioned"
 migration:
   imrt:
     syncUrlPattern: "http://iis-awsqa.sbtds.org/sync/%s"
@@ -553,10 +558,14 @@ spring:
   profiles: uat
   datasource:
     url: "jdbc:postgresql://imrt-db-uat-aurora.cluster-cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
-    max-active: 2
+    tomcat:
+      max-active: 2
 
 itembank:
   group: "iat-uat"
+  aws:
+    bucketName: "iat-uat"
+    versionedBucketName: "iat-uat"
 migration:
   imrt:
     syncUrlPattern: "http://iis-awsuat.sbtds.org/sync/%s"
@@ -565,10 +574,14 @@ spring:
   profiles: prod-mirror
   datasource:
     url: "jdbc:postgresql://tims-prod-mirror.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
-    max-active: 2
+    tomcat:
+      max-active: 2
 
 itembank:
   group: "iat-prod-mirror"
+  aws:
+    bucketName: "iat-prod-mirror"
+    versionedBucketName: "iat-prod-mirror-versioned"
 migration:
   imrt:
     syncUrlPattern: "http://iis-prod-mirror.sbtds.org/sync/%s"
