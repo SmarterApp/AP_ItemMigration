@@ -60,7 +60,6 @@ logging:
 
 migration:
   numberOfThreads: 5
-  publishReportEnabled: true
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
@@ -75,48 +74,15 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-#    - 123793
+    - 4340
   data-store-migrations:
     enabled: true
     migrationSets:
-#      - migrationSetKey: "iat-30"
-#        migrationDefinitions:
-#        - migrationName: "migration2225"
-#          migrationDescription: "Migration: Rename ASL files to have STEM at the end."
-#        - migrationName: "migration2119"
-#          migrationDescription: "Migration: Map WER rubric from plain text to rich text."
-#      - migrationSetKey: "iat-31"
-#        migrationDefinitions:
-#          - migrationName: "migration2576"
-#            migrationDescription: "Migration: Update imported item glossary values."
-#            requiresImportFiles: true
-#          - migrationName: "migration2669"
-#            migrationDescription: "Migration2669: Update items' server managed values"
-#          - migrationName: "migration2698"
-#            migrationDescription: "Migration2698: Update glossary audio file names"
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration2133: Update Nested tables."
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration1686: Add Braille values to metadata file."
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration2542: Update TTS for images."
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration2690: Add intended grade to the SAAIF item content XML file"
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration2691: Add spa language in the SAAIF metadata.xml"
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration2693: Add subject to the SAAIF item content XML file"
-#          - migrationName: "migrationGenerateSaaif"
-#            migrationDescription: "Migration2711: Create translation TTS tags in the SAAIF item content XML file"
-      # iat-33.1 matches the production migration configuration, it is the starting point when importing items at
-      # version iat-31.  The idea is to import an item into QA at version iat-31 then run this migration against it
       - migrationSetKey: "iat-33.1"
         migrationDefinitions:
-          - migrationName: "migration2673"
-            migrationDescription: "Migration2673: Set correct item prompt on imported EBSR items"
-            requiresImportFiles: true
           - migrationName: "migration2785"
             migrationDescription: "Migration2785: Set correct item version on imported items"
+            requiresImportFiles: true
             migrateBranches: true
           - migrationName: "migration2641"
             migrationDescription: "IAT-2641: Prepend any Stimulus title field values to the existing prompt"
@@ -141,9 +107,11 @@ migration:
           - migrationName: "migration2571"
             migrationDescription: "Migration2571: Imported braille file names need to be updated to reference the new item ID and regex pattern"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2659"
             migrationDescription: "Migration2659: CC file names will need to be updated to match newly imported Item ID and associated to their items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2593"
             migrationDescription: "Migration2593: English text not removed from translations content in TI items"
             migrateBranches: true
@@ -168,12 +136,10 @@ migration:
             migrationDescription: "Migration2605: Import cleanup: Editing an imported glossary term that has rich text formatting applied loses link to glossary entry"
             migrateBranches: true
             requiresImportFiles: true
-          - migrationName: "migration2668"
-            migrationDescription: "Migration2668: Remove images from translated item options if they are identical to the english image names"
-            requiresImportFiles: true
           - migrationName: "migration2792"
             migrationDescription: "Migration2792: Set Scoring engine to AutomaticWithKeys on imported MS and EBSR items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2799"
             migrationDescription: "Migration2799: MI item(s) lost the correct answers during import"
             migrateBranches: true
@@ -181,7 +147,7 @@ migration:
           - migrationName: "migration2660"
             migrationDescription: "Migration2660: Image file names will need to be updated to match newly imported Item ID and associated to their items"
             migrateBranches: true
-#       iat-33.2 matches the production migration configuration
+            requiresImportFiles: true
       - migrationSetKey: "iat-33.2"
         migrationDefinitions:
           - migrationName: "migration2807"
@@ -191,13 +157,8 @@ migration:
           - migrationName: "migration2788"
             migrationDescription: "Migration2788: Uploading ASL files lowercases their names breaking ASL"
             migrateBranches: true
-#       iat-35 matches the production 3/9/2019 release, when running this one make sure there are no other migration
-#       sets commented in, the idea is import an item into QA, run everything prior to this on that item, then
-#       comment those sets out and comment iat-35 in and run it.  iat-33.
       - migrationSetKey: "iat-35"
         migrationDefinitions:
-          - migrationName: "migrationGitLabProjectRename"
-            migrationDescription: "IAT-2729: Change TIMS-created item repository names & file names to match downstream system needs"
           - migrationName: "migration2708"
             migrationDescription: "Migration2708: Score points validation error regarding quotes is generated against items with points assigned"
             migrateBranches: true
@@ -205,12 +166,14 @@ migration:
           - migrationName: "migration1615"
             migrationDescription: "IAT-1615: Update image TTS html markup on rich text fields"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2360"
             migrationDescription: "IAT-2360: Update invalid Scoring Engine metadata values"
             migrateBranches: true
           - migrationName: "migration2776"
             migrationDescription: "IAT-2776: Remove certain html style values from imported items"
             migrateBranches: true
+            requiresImportFiles: true
           - migrationName: "migration2805"
             migrationDescription: "Migration2805: Set correct item prompt on imported EBSR items"
             migrateBranches: true
@@ -218,6 +181,7 @@ migration:
           - migrationName: "migration2815"
             migrationDescription: "IAT-2815: Validation: Both HTQ item types fail item type validation"
             onlySyncToGitlab: true
+            requiresImportFiles: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2364/IAT-2810: SAAIF files contain translation content for all items even when no translations are defined"
             onlySyncToGitlab: true
@@ -233,12 +197,6 @@ migration:
           - migrationName: "migration2863"
             migrationDescription: "IAT-2863: Import Cleanup: Some prompt text is missing spacing"
             requiresImportFiles: true
-          - migrationName: "migration2807"
-            migrationDescription: "Migration2807: Validation: Duplicate attachment ID error on migrated braille files"
-            onlySyncToGitlab: true
-          - migrationName: "migration2788"
-            migrationDescription: "migration2788: Uploading ASL files lowercases their names breaking ASL."
-            migrateBranches: true
           - migrationName: "migration2313Htqs"
             migrationDescription: "migration2313Htqs: Import rubric value, import qrx file and set interactive text to be non-editable until user discards imported values"
             migrateBranches: true
@@ -263,17 +221,28 @@ migration:
             migrationDescription: "IAT-2778: Validation: Rubric error generated against MI and GI items"
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2366: Image alt text error is generated against embedded MathML"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2876: Status element missing in metadata.xml"
+            onlySyncToGitlab: true
+          # incorrect description - it should have been IAT-2366: Validation: Image alt text error is generated against embedded MathML"
+          # but was IAT-2808: SecurityStatus metadata value should be hard-coded to secure
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2366: Validation: Image alt text error is generated against embedded MathML"
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2769: Braille metadata is not always recognized by the validation process"
             onlySyncToGitlab: true
-      - migrationSetKey: "iat-36"
+      # This four migrations below were targeted migrations that reran previous migrations.  They are no
+      # longer needed but the migration app needs them in the system.
+      - migrationSetKey: "iat-36.1"
         ignoreSet: true
-      - migrationSetKey: "iat-37"
+      - migrationSetKey: "iat-36.2"
+        ignoreSet: true
+      - migrationSetKey: "iat-36.3"
+        ignoreSet: true
+      - migrationSetKey: "iat-36.6"
+        ignoreSet: true
+      # This was run 3/28 on a subset of items and again against all items on 4/5 hotfix
+      - migrationSetKey: "iat-36.7"
         migrationDefinitions:
           - migrationName: "migration2816"
             migrationDescription: "IAT-2816: Detect Student Instructions within imported HTQ and add an extra line break"
@@ -305,24 +274,6 @@ migration:
           - migrationName: "migration2274NonImported"
             migrationDescription: "IAT-2274: Show EQ, GI, and TI rubric on scoring tab for imported items"
             migrateBranches: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2848: Write AccessibilityTagsASLLanguage field to metadata.xml"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2856: AssociatedWordlist metadata field is not written when a glossary exists"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2855: AssociatedTutorial metadata field is not written"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2845: itm_item_id attribute value should populate imported items with the itsID, otherwise leave it blank"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2844: stim_pass_id attribute value should populate imported items with the itsID, otherwise leave it blank"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2854: EnemyItem value is not being written to metadata.xml"
-            onlySyncToGitlab: true
           - migrationName: "migration2849NonImport"
             migrationDescription: "IAT-2849: Non-imported items: Write StimulusFormat to metadata.xml for Stim items"
             onlySyncToGitlab: true
@@ -350,21 +301,12 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2843: (resync) SAAIF item version should reflect metadata version"
             onlySyncToGitlab: true
-          - migrationName: "migration2921"
-            migrationDescription: "IAT-2921: Rich text (Bolding) formatting was lost during recent migrations"
-            requiresImportFiles: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2925: Some SAAIF item xml files failed to migrate to the new naming convention"
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2924: Validation: Rubric error generated against some imported HTQS items"
             onlySyncToGitlab: true
-          - migrationName: "migration2930"
-            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
-            requiresImportFiles: true
-          - migrationName: "migration2867"
-            migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
-            requiresImportFiles: true
           - migrationName: "migration2933"
             migrationDescription: "IAT-2933: Some HTQS items had more than one new line added after the prompt"
             requiresImportFiles: true
@@ -374,48 +316,70 @@ migration:
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2947: Modify PerformanceTask field name and value in metadata.xml"
             onlySyncToGitlab: true
+          - migrationName: "migration2670"
+            migrationDescription: "Migration2670: Image TTS tags were lost during import"
+            requiresImportFiles: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2949: STIM: Remove unused elements from metadata.xml"
             onlySyncToGitlab: true
-          - migrationName: "migration2668"
-            migrationDescription: "IAT-2668: Imported items have duplicated images in English and Spanish options MC, MS"
-            requiresImportFiles: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2953: TTS does not work properly on text with rich text effects applied first"
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateSaaif"
             migrationDescription: "IAT-2948: Update TIMS to dynamically populate metadata.xml based on item data"
             onlySyncToGitlab: true
-          - migrationName: "migration2839"
-            migrationDescription: "IAT-2839: Add human readable rubric for simple machine-scored items MI, HTQO, MS, MC, EBSR"
-            migrateBranches: true
+          - migrationName: "migration2921"
+            migrationDescription: "IAT-2921: Rich text (Bolding) formatting was lost during recent migrations"
+            requiresImportFiles: true
+          - migrationName: "migration2930"
+            migrationDescription: "IAT-2930: Tables with rowspans were not imported properly"
+            requiresImportFiles: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2848: Write AccessibilityTagsASLLanguage field to metadata.xml "
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2856: AssociatedWordlist metadata field is not written when a glossary exists "
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2845: itm_item_id attribute value should populate imported items with the itsID, otherwise leave it blank "
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2844: stim_pass_id attribute value should populate imported items with the itsID, otherwise leave it blank "
+            onlySyncToGitlab: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-2855: AssociatedTutorial metadata field is not being written "
+            onlySyncToGitlab: true
+          - migrationName: "migration2965"
+            migrationDescription: "IAT-2965: Imported TI items are failing to convert to SAAIF"
           - migrationName: "migration2867"
             migrationDescription: "IAT-2867: Imported items have duplicated text in English and Spanish options"
             requiresImportFiles: true
-          - migrationName: "migration2965"
-            migrationDescription: "IAT-2965:  Imported TI items are failing to convert to SAAIF"
+          - migrationName: "migration2668"
+            migrationDescription: "migration2668: Update EBSR, MC and MS options to not stack spanish when they only contain images"
             requiresImportFiles: true
+      - migrationSetKey: "iat-38"
+        migrationDefinitions:
+          - migrationName: "migration2839"
+            migrationDescription: "IAT-2839: Add human readable rubric for simple machine-scored items MI, HTQO, MS, MC, EBSR"
           - migrationName: "migration2886Imported"
             migrationDescription: "IAT-2886: Limit allowed answers for MS items (Imported items)"
             requiresImportFiles: true
           - migrationName: "migration2886NonImported"
             migrationDescription: "IAT-2886: Limit allowed answers for MS items (Non-imported items)"
             migrateBranches: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3027: BrailleStandard should not be in SAAIF metadata.xml"
+            onlySyncToGitlab: true
           - migrationName: "migration2957"
             migrationDescription: "IAT-2957: Import TTS for Equation images"
             requiresImportFiles: true
-      - migrationSetKey: "iat-38.1"
-        migrationDefinitions:
           - migrationName: "migration2929"
             migrationDescription: "IAT-2929: After bulk glossary upload containing multiple Filipino and Punjabi defs for a single term, manual edits to that same term result in lost Filipino and Punjabi defs"
-            requiresImportFiles: true
+            migrateBranches: true
           - migrationName: "migration3025"
             migrationDescription: "IAT-3025: Show EQ, GI, and TI rubric on scoring tab for imported items"
             requiresImportFiles: true
-#      items from production on 5/7
-      - migrationSetKey: "iat-38"
-        ignoreSet: true
-      - migrationSetKey: "iat-39"
+      - migrationSetKey: "iat-40"
         migrationDefinitions:
           - migrationName: "migration2894"
             migrationDescription: "IAT-2894: 4.6.1 Write EQ spec defining how all right & left label features should be written to SAAIF files"
@@ -427,9 +391,6 @@ migration:
             onlySyncToGitlab: true
           - migrationName: "migrationGenerateStimuliSaaif"
             migrationDescription: "IAT-2853: stm_att_Stim Format attribute is not being written to Stimulus item xml files"
-            onlySyncToGitlab: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-2846: Version number in item xml is missing minor version"
             onlySyncToGitlab: true
           - migrationName: "migration2972"
             migrationDescription: "IAT-2972: Update metadata.xml WritingPurpose field to use a new name and values"
@@ -448,8 +409,6 @@ migration:
             requiresImportFiles: true
           - migrationName: "migrationNonImport2887"
             migrationDescription: "IAT-2887: 4.1.2 Limit allowed answers for MS part of EBSR items"
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-3034: Modify how TIMS writes Equation TTS values to the item xml file"
             onlySyncToGitlab: true
           - migrationName: "migration2944"
             migrationDescription: "IAT-2944: Bulk glossary upload ignores term numbering and is capable of creating dupe numbers "
@@ -459,6 +418,7 @@ migration:
             requiresImportFiles: true
           - migrationName: "migrationNonImport2888"
             migrationDescription: "IAT-2888: 4.1.3 Limit allowed answers for MI items"
+            onlySyncToGitlab: true
           - migrationName: "migration3044"
             migrationDescription: "IAT-3044: Use Enhanced ID to produce Legacy StandardPublication"
             migrateBranches: true
@@ -493,9 +453,6 @@ migration:
           - migrationName: "migration3065"
             migrationDescription: "IAT-3065: Machine scoring section is missing on some imported and migrated items"
             migrateBranches: true
-      # Phase 4 production migration number
-      - migrationSetKey: "iat-40"
-        ignoreSet: true
       - migrationSetKey: "iat-40.1"
         migrationDefinitions:
           - migrationName: "migration3106"
@@ -534,6 +491,12 @@ migration:
             migrateBranches: true
           - migrationName: "migration3227"
             migrationDescription: "IAT-3227 - Fix MI Human Readable Rubric Display"
+            migrateBranches: true
+      - migrationSetKey: "iat-42"
+        migrationDefinitions:
+          - migrationName: "migration3246"
+            migrationDescription: "IAT-3246: Imported styling remains on some items and does not render in preview"
+            requiresImportFiles: false
             migrateBranches: true
 
 ---
