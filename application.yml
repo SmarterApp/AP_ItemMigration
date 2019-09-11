@@ -63,7 +63,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
-  validateMigrationSets: false
+  validateMigrationSets: true
   itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
@@ -74,7 +74,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-    - 33413
+    - 4340
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -498,8 +498,9 @@ migration:
             migrationDescription: "IAT-3246: Imported styling remains on some items and does not render in preview"
             requiresImportFiles: false
             migrateBranches: true
-          - migrationName: "migrationGenerateSaaif"
-            migrationDescription: "IAT-3177: Certain TTS tags were written incorrectly during a recent migration"
+          - migrationName: "migration3230"
+            migrationDescription: "IAT-3230: TI does not save the rubric value within the saaif rubric field"
+            requiresImportFiles: false
             onlySyncToGitlab: true
 
 ---
