@@ -63,7 +63,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
-  validateMigrationSets: true
+  validateMigrationSets: false
   itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
@@ -74,7 +74,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-    - 4340
+    - 33413
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -498,6 +498,9 @@ migration:
             migrationDescription: "IAT-3246: Imported styling remains on some items and does not render in preview"
             requiresImportFiles: false
             migrateBranches: true
+          - migrationName: "migrationGenerateSaaif"
+            migrationDescription: "IAT-3177: Certain TTS tags were written incorrectly during a recent migration"
+            onlySyncToGitlab: true
 
 ---
 spring:
