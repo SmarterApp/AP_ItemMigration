@@ -498,6 +498,10 @@ migration:
             migrationDescription: "IAT-3246: Imported styling remains on some items and does not render in preview"
             requiresImportFiles: false
             migrateBranches: true
+          - migrationName: "migration3230"
+            migrationDescription: "IAT-3230: TI does not save the rubric value within the saaif rubric field"
+            requiresImportFiles: false
+            onlySyncToGitlab: true
 
 ---
 spring:
