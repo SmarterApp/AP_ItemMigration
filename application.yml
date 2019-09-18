@@ -74,7 +74,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-    - 4340
+#    - 33413
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -502,6 +502,11 @@ migration:
             migrationDescription: "IAT-3230: TI does not save the rubric value within the saaif rubric field"
             requiresImportFiles: false
             onlySyncToGitlab: true
+      - migrationSetKey: "iat-42.1"
+        migrationDefinitions:
+          - migrationName: "migration3177"
+            migrationDescription: "IAT-3177: Certain TTS tags were written incorrectly during a recent migration"
+            requiresImportFiles: true
 
 ---
 spring:
