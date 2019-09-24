@@ -63,7 +63,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
-  validateMigrationSets: false
+  validateMigrationSets: true
   itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
