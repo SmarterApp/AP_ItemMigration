@@ -63,7 +63,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
-  validateMigrationSets: true
+  validateMigrationSets: false
   itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
@@ -74,7 +74,7 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-#    - 33413
+    - 200229
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -507,6 +507,11 @@ migration:
           - migrationName: "migration3177"
             migrationDescription: "IAT-3177: Certain TTS tags were written incorrectly during a recent migration"
             requiresImportFiles: true
+      - migrationSetKey: "iat-42.2"
+        migrationDefinitions:
+          - migrationName: "migration3221"
+            migrationDescription: "IAT-3221: Remove invalid duplicate images from item.json"
+            requiresImportFiles: false
 
 ---
 spring:
