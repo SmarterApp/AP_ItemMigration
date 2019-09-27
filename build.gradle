@@ -125,6 +125,8 @@ dependencies {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
     testCompile 'org.hsqldb:hsqldb'
+
+    testCompile 'org.assertj:assertj-core:3.12.2'
 }
 
 dependencyManagement {
