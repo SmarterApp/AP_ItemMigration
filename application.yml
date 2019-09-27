@@ -502,13 +502,9 @@ migration:
             migrationDescription: "IAT-3230: TI does not save the rubric value within the saaif rubric field"
             requiresImportFiles: false
             onlySyncToGitlab: true
-      - migrationSetKey: "iat-42.1"
-        migrationDefinitions:
           - migrationName: "migration3177"
             migrationDescription: "IAT-3177: Certain TTS tags were written incorrectly during a recent migration"
             requiresImportFiles: true
-      - migrationSetKey: "iat-42.2"
-        migrationDefinitions:
           - migrationName: "migration3221"
             migrationDescription: "IAT-3221: Remove invalid duplicate images from item.json"
             requiresImportFiles: false
