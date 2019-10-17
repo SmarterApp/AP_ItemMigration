@@ -508,6 +508,9 @@ migration:
           - migrationName: "migration3221"
             migrationDescription: "IAT-3221: Remove invalid duplicate images from item.json"
             requiresImportFiles: false
+          - migrationName: "migration3306"
+            migrationDescription: "IAT-3306: Rich Text Editor for TIMS Short Answer Items"
+            requiresImportFiles: false
 
 ---
 spring:
