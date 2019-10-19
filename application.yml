@@ -511,6 +511,9 @@ migration:
           - migrationName: "migration3306"
             migrationDescription: "IAT-3306: Rich Text Editor for TIMS Short Answer Items"
             requiresImportFiles: false
+          - migrationName: "migration3204"
+            migrationDescription: "IAT-3204: Machine Scoring enabled for items that do not support it."
+            requiresImportFiles: false
 
 ---
 spring:
