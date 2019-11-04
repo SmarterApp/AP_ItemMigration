@@ -497,6 +497,10 @@ migration:
             migrateBranches: true
       - migrationSetKey: "iat-42"
         migrationDefinitions:
+          - migrationName: "migration3345"
+            migrationDescription: "IAT-3345: Add Saaif object and set version ids for all item attachments"
+            requiresImportFiles: false
+            migrateBranches: false
           - migrationName: "migration3246"
             migrationDescription: "IAT-3246: Imported styling remains on some items and does not render in preview"
             requiresImportFiles: false
