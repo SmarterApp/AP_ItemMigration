@@ -518,6 +518,9 @@ migration:
           - migrationName: "migration3204"
             migrationDescription: "IAT-3204: Machine Scoring enabled for items that do not support it."
             requiresImportFiles: false
+          - migrationName: "migration3297"
+            migrationDescription: "IAT-3297: Add <strong> tag to Mi header and first column"
+            requiresImportFiles: false
 
 ---
 spring:
