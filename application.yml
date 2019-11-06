@@ -498,6 +498,10 @@ migration:
             migrationDescription: "IAT-3345: Add Saaif object and set version ids for all item attachments"
             requiresImportFiles: false
             migrateBranches: false
+          - migrationName: "migration3448"
+            migrationDescription: "IAT-3448: Add Saaif attachment mappings for tut items"
+            requiresImportFiles: false
+            migrateBranches: false
           - migrationName: "migration3246"
             migrationDescription: "IAT-3246: Imported styling remains on some items and does not render in preview"
             requiresImportFiles: false
