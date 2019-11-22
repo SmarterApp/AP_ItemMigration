@@ -525,6 +525,12 @@ migration:
           - migrationName: "migration3297"
             migrationDescription: "IAT-3297: Add <strong> tag to Mi header and first column"
             requiresImportFiles: false
+      - migrationSetKey: "iat-45"
+          migrationDefinitions:
+            - migrationName: "migrationQ168"
+              migrationDescription: "QTI-168: Expand GI archives and insert content into item json"
+              requiresImportFiles: false
+              migrateBranches: true
 
 ---
 spring:
