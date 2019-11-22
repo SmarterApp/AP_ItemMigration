@@ -493,6 +493,8 @@ migration:
             migrationDescription: "IAT-3227 - Fix MI Human Readable Rubric Display"
             migrateBranches: true
       - migrationSetKey: "iat-42"
+        ignoreSet: true
+      - migrationSetKey: "iat-44"
         migrationDefinitions:
           - migrationName: "migration3345"
             migrationDescription: "IAT-3345: Add Saaif object and set version ids for all item attachments"
