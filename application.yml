@@ -530,7 +530,7 @@ migration:
       - migrationSetKey: "iat-45"
           migrationDefinitions:
             - migrationName: "migrationQ168"
-              migrationDescription: "QTI-168: Expand GI archives and insert content into item json"
+              migrationDescription: "Update item json to version 45, expand GI archive"
               requiresImportFiles: false
               migrateBranches: true
 
