@@ -74,7 +74,6 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-  - 181850
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -493,6 +492,8 @@ migration:
             migrationDescription: "IAT-3227 - Fix MI Human Readable Rubric Display"
             migrateBranches: true
       - migrationSetKey: "iat-42"
+        ignoreSet: true
+      - migrationSetKey: "iat-44"
         migrationDefinitions:
           - migrationName: "migration3345"
             migrationDescription: "IAT-3345: Add Saaif object and set version ids for all item attachments"
@@ -525,6 +526,12 @@ migration:
           - migrationName: "migration3297"
             migrationDescription: "IAT-3297: Add <strong> tag to Mi header and first column"
             requiresImportFiles: false
+      - migrationSetKey: "iat-45"
+        migrationDefinitions:
+          - migrationName: "migration3486"
+            migrationDescription: "IAT-3486: Some imported HTQS items incorrectly generate missing scoring file validation"
+            requiresImportFiles: false
+            migrateBranches: false
 
 ---
 spring:
