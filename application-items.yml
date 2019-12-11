@@ -2,4 +2,23 @@ migration:
   # Item ids that need to be copied here.  It should be the id only (not item-200-).  Associated files like
   # stim and tutorials are not included.
   includedItems:
-    - 201603
+    - 123494
+    - 123512
+    - 123604
+    - 123605
+    - 124722
+    - 124725
+    - 124727
+    - 124730
+    - 92165
+    - 98689
+    - 172319
+    - 9379
+    - 13892
+    - 43301
+    - 172013
+    - 13290
+    - 14543
+    - 16397
+    - 18153
+    - 182979
