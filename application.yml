@@ -63,7 +63,7 @@ migration:
   syncFromGitlabEnabled: false
   copySourceToTargetEnabled: false
   deleteItemsEnabled: false
-  validateMigrationSets: false
+  validateMigrationSets: true
   itemFileLocation: ${tims.copy.item.file.location}
   syncWithImrt: false
   sourceBank:
@@ -74,8 +74,6 @@ migration:
   imrt:
     syncUrlPattern: "http://localhost:9081/sync/%s"
   includedItems:
-  - 172013
-#  - 45362
   data-store-migrations:
     enabled: true
     migrationSets:
@@ -528,6 +526,16 @@ migration:
           - migrationName: "migration3297"
             migrationDescription: "IAT-3297: Add <strong> tag to Mi header and first column"
             requiresImportFiles: false
+      - migrationSetKey: "iat-45"
+        migrationDefinitions:
+          - migrationName: "migration3486"
+            migrationDescription: "IAT-3486: Some imported HTQS items incorrectly generate missing scoring file validation"
+            requiresImportFiles: false
+            migrateBranches: false
+          - migrationName: "migration3487"
+            migrationDescription: "IAT-3487: Some Imported EQ items have 'Machine scoring file not found.'"
+            requiresImportFiles: false
+            migrateBranches: false
 
 ---
 spring:
