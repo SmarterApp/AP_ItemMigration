@@ -1,3 +1,6 @@
+# !!! IMPORTANT !!! - Archived
+This project has been archived and is no longer actively maintained.  All code has been migrated to the [TIMS project](https://github.com/SmarterApp/TIMS).
+
 # Assessment Production - Item Migration - ap-item-migration
 Command line application for migrating items. 
 
